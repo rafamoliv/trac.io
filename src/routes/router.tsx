@@ -3,8 +3,6 @@ import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, Outlet, useNavigate, useRoutes } from 'react-router-dom'
 
-import { setSignin } from '@/store/Auth'
-
 import { privateURL, publicURL } from './urls'
 import { useAppSelector } from '@/utils/hooks'
 
@@ -43,20 +41,19 @@ const Signin = ({ onClick }) => {
 const Router = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const { user } = useAppSelector((state) => state.auth)
 
   React.useEffect(() => {
-    if (user) {
+    if ('user') {
       navigate(privateURL.HOME)
     } else {
       navigate(publicURL.SIGNIN)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user])
+  }, [])
 
   let routes = useRoutes([
     {
-      element: <ProtectedRoute user={user} />,
+      element: <ProtectedRoute user={'user'} />,
       children: [
         {
           path: privateURL.HOME,
@@ -66,7 +63,7 @@ const Router = () => {
     },
     {
       path: publicURL.SIGNIN,
-      element: <Signin onClick={() => dispatch(setSignin('sign@in.com'))} />
+      element: <Signin onClick={() => console.log('sign@in.com')} />
     }
   ])
 
