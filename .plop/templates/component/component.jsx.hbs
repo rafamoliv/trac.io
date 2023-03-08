@@ -1,0 +1,40 @@
+// #region imports
+import { faArrowLeftLong } from '@fortawesome/pro-thin-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+
+import config from './{{pascalCase name}}.config'
+import * as S from './{{pascalCase name}}.styles'
+// #endregion imports
+
+/**
+ * Componente {{pascalCase name}}
+ */
+
+const {{pascalCase name}} = ({ children, onClick }) => {
+  const { t } = useTranslation('cat{{pascalCase name}}')
+  const teste = config.foo
+  console.log(teste, t('foo'))
+
+  return (
+    <S.Wrap>
+      <S.Button onClick={onClick}>{children}</S.Button>
+      <S.Text><FontAwesomeIcon icon={faArrowLeftLong} /> {children}</S.Text>
+    </S.Wrap>
+  )
+}
+
+{{pascalCase name}}.defaultProps = {
+  children: '{{pascalCase name}} Componente'
+}
+
+{{pascalCase name}}.propTypes = {
+  /** Conteúdo filho */
+  children: PropTypes.any,
+  /** Evento de clique */
+  onClick: PropTypes.func
+}
+
+export default {{pascalCase name}}
