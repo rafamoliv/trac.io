@@ -1,4 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import {
+  createApi,
+  fetchBaseQuery,
+  FetchArgs
+} from '@reduxjs/toolkit/query/react'
 
 export const api = createApi({
   reducerPath: 'api',
@@ -11,52 +15,52 @@ export const api = createApi({
   endpoints(builder) {
     return {
       fetchAssets: builder.query({
-        query: () => ({
+        query: (): FetchArgs => ({
           url: `/assets`
         })
       }),
       fetchAssetsById: builder.query({
-        query: (id) => ({
+        query: (id): FetchArgs => ({
           url: `/assets/${id}`
         })
       }),
       fetchUsers: builder.query({
-        query: () => ({
+        query: (): FetchArgs => ({
           url: `/users`
         })
       }),
       fetchUsersById: builder.query({
-        query: (id) => ({
+        query: (id): FetchArgs => ({
           url: `/users/${id}`
         })
       }),
       fetchUnits: builder.query({
-        query: () => ({
+        query: (): FetchArgs => ({
           url: `/units`
         })
       }),
       fetchUnitsById: builder.query({
-        query: (id) => ({
+        query: (id): FetchArgs => ({
           url: `/units/${id}`
         })
       }),
       fetchCompanies: builder.query({
-        query: () => ({
+        query: (): FetchArgs => ({
           url: `/companies`
         })
       }),
       fetchCompaniesById: builder.query({
-        query: (id) => ({
+        query: (id): FetchArgs => ({
           url: `/companies/${id}`
         })
       }),
       fetchWorkorders: builder.query({
-        query: () => ({
+        query: (): FetchArgs => ({
           url: `/workorders`
         })
       }),
       fetchWorkordersById: builder.query({
-        query: (id) => ({
+        query: (id): FetchArgs => ({
           url: `/workorders/${id}`
         })
       })
