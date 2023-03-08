@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-vite-react",
+  "name": "trac.io",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "engines": {
     "npm": "please-use-yarn",
     "yarn": ">= 1.19.1"
