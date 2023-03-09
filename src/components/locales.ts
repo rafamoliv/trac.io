@@ -1,14 +1,5 @@
-import { buttonEn, buttonPtBr } from './atoms'
-import { collapseEn, collapsePtBr } from './molecules'
+const componentsEn = {}
 
-const componentsEn = {
-  ...collapseEn,
-  ...buttonEn
-}
-
-const componentsPtBr = {
-  ...collapsePtBr,
-  ...buttonPtBr
-}
+const componentsPtBr = {}
 
 export { componentsEn, componentsPtBr }
