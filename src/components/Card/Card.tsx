@@ -8,7 +8,7 @@ import { ReactNode } from 'react';
 interface CardProps {
   bordered?: boolean
   children: ReactNode
-  cover: ReactNode
+  cover?: ReactNode
   hoverable?: boolean
   title?: string
 }
