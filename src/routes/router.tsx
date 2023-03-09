@@ -1,13 +1,13 @@
 import i18next from 'i18next'
-import * as React from 'react'
+import { useEffect, useContext, lazy } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, Outlet, useNavigate, useRoutes } from 'react-router-dom'
 
 import { privateURL, publicURL } from './urls'
-import { useAppSelector } from '@/utils/hooks'
+import { AppContext } from '@/context/AppContext'
 
 // pages
-const Home = React.lazy(() => import('@/pages/Home'))
+const Home = lazy(() => import('@/pages/Home'))
 
 // eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({ user }) => {
@@ -39,31 +39,36 @@ const Signin = ({ onClick }) => {
 }
 
 const Router = () => {
-  const dispatch = useDispatch()
+  const { user, handleSignIn } = useContext(AppContext)
   const navigate = useNavigate()
 
-  React.useEffect(() => {
-    if ('user') {
-      navigate(privateURL.HOME)
-    } else {
-      navigate(publicURL.SIGNIN)
-    }
+  useEffect(() => {
+    if (!user) navigate(publicURL.SIGNIN)
+    if (user) navigate(privateURL.DASHBOARD)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [user])
 
   let routes = useRoutes([
     {
-      element: <ProtectedRoute user={'user'} />,
+      element: <ProtectedRoute user={user} />,
       children: [
         {
-          path: privateURL.HOME,
+          path: privateURL.DASHBOARD,
           element: <Home />
+        },
+        {
+          path: '*',
+          element: <Navigate to={privateURL.DASHBOARD} />
         }
       ]
     },
     {
       path: publicURL.SIGNIN,
-      element: <Signin onClick={() => console.log('sign@in.com')} />
+      element: <Signin onClick={() => handleSignIn('teste@uhas.com')} />
+    },
+    {
+      path: '*',
+      element: <Navigate to={publicURL.SIGNIN} />
     }
   ])
 

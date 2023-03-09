@@ -10,6 +10,7 @@ import Store from '@/store'
 import { MyThemeProvider } from '@/styles'
 
 import Routes from './routes'
+import { AppContextProvider } from './context/AppContext'
 import { Loading } from './components'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -19,13 +20,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         algorithm: theme.compactAlgorithm,
       }}
     >
-      <MyThemeProvider>
-        <BrowserRouter>
-          <Suspense fallback={<Loading size='bg' />}>
-            <Routes />
-          </Suspense>
-        </BrowserRouter>
-      </MyThemeProvider>
+      <AppContextProvider>
+        <MyThemeProvider>
+          <BrowserRouter>
+            <Suspense fallback={<Loading size='bg' />}>
+              <Routes />
+            </Suspense>
+          </BrowserRouter>
+        </MyThemeProvider>
+      </AppContextProvider>
     </ConfigProvider>
   </Provider>
 )

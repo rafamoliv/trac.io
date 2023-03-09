@@ -9,10 +9,11 @@ import {
   LogoutOutlined
 } from '@ant-design/icons';
 import { MenuProps, Layout, Menu } from 'antd';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { privateURL, publicURL } from '@/routes/urls';
 import { IconTracIO } from '@/assets';
 import { Figure, Image } from '../SystemPage.style';
+import { AppContext } from '@/context/AppContext';
 
 /**
  * Internal pages template root
@@ -39,6 +40,7 @@ const getItem = (
 export const Root = ({ children }: ChildrenProps) => {
   const { t, i18n } = useTranslation('systemPagesText')
   const [collapsed, setCollapsed] = useState(false);
+  const { handleSignIn, handleSignOut } = useContext(AppContext)
 
   const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, UNITS, USERS, SETTINGS } = privateURL
 
@@ -83,7 +85,8 @@ export const Root = ({ children }: ChildrenProps) => {
           <button onClick={() => i18n.changeLanguage('ptbr')}>PT</button>
           <button onClick={() => i18n.changeLanguage('en')}>EN</button>
         </div>
-        <Menu mode="inline" onClick={(info) => console.log(info.key)} items={signOutMenuItem} />
+        <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
+        <Menu mode="inline" onClick={() => handleSignOut()} items={signOutMenuItem} />
       </Layout.Sider>
       <Layout className="site-layout">
         {children}
