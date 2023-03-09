@@ -1,4 +1,4 @@
-/* import { systemPagesEn, systemPagesPtBr } from './SystemPage'
+import { systemPagesEn, systemPagesPtBr } from './SystemPage'
 
 const templatesEn = {
   ...systemPagesEn
@@ -9,4 +9,3 @@ const templatesPtBr = {
 }
 
 export { templatesEn, templatesPtBr }
- */
