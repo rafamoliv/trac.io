@@ -1,5 +1,5 @@
-const homePtBr = {
-  pgHome: {
+const dashboardPtBr = {
+  pgDashboard: {
     title: 'Boilerplate Vite + React',
     summary: 'Clique nos ícones Vite e React para saber mais',
     count: 'Contador em {{value}}',
@@ -10,4 +10,4 @@ const homePtBr = {
   }
 }
 
-export default homePtBr
+export default dashboardPtBr

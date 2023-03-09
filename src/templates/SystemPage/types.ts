@@ -3,7 +3,7 @@
 import { ReactNode } from 'react'
 
 export interface ChildrenProps {
-  children: ReactNode
+  children?: ReactNode
 }
 
 export interface HeaderProps extends ChildrenProps {

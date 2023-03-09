@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 
 import { Button } from '@/components'
 
-import { Card, Container, Docs, Logo } from './Home.styles'
+import { Card, Container, Docs, Logo } from './Dashboard.styles'
 
 import { SystemPage } from '@/templates/SystemPage'
 /* import {

@@ -1,11 +1,20 @@
-import { homeEn, homePtBr } from './Home'
+import { dashboardEn, dashboardPtBr } from './Dashboard'
+import { settingsEn, settingsPtBr } from './Settings'
+import { assetsEn, assetsPtBr } from './Assets'
+import { workordersEn, workordersPtBr } from './Workorders'
 
 const pagesEn = {
-  ...homeEn
+  ...dashboardEn,
+  ...settingsEn,
+  ...assetsEn,
+  ...workordersEn
 }
 
 const pagesPtBr = {
-  ...homePtBr
+  ...dashboardPtBr,
+  ...settingsPtBr,
+  ...assetsPtBr,
+  ...workordersPtBr
 }
 
 export { pagesEn, pagesPtBr }

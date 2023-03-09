@@ -1,5 +1,5 @@
-const homeEn = {
-  pgHome: {
+const assetsEn = {
+  pgAssets: {
     title: 'Boilerplate Vite + React',
     summary: 'Click on the Vite and React logos to learn more',
     count: 'count is {{value}}',
@@ -10,4 +10,4 @@ const homeEn = {
   }
 }
 
-export default homeEn
+export default assetsEn

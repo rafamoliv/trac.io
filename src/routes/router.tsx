@@ -1,13 +1,15 @@
 import i18next from 'i18next'
-import { useEffect, useContext, lazy } from 'react'
+import { useEffect, useContext, lazy, Suspense } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, Outlet, useNavigate, useRoutes } from 'react-router-dom'
 
 import { privateURL, publicURL } from './urls'
 import { AppContext } from '@/context/AppContext'
+import { Loading } from '@/components'
 
 // pages
-const Home = lazy(() => import('@/pages/Home'))
+const Dashboard = lazy(() => import('@/pages/Dashboard'))
+const Settings = lazy(() => import('@/pages/Settings'))
 
 // eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({ user }) => {
@@ -54,7 +56,11 @@ const Router = () => {
       children: [
         {
           path: privateURL.DASHBOARD,
-          element: <Home />
+          element: <Suspense fallback={<Loading size='bg' />}><Dashboard /></Suspense>
+        },
+        {
+          path: privateURL.SETTINGS,
+          element: <Suspense fallback={<Loading size='bg' />}><Settings /></Suspense>
         },
         {
           path: '*',
@@ -64,7 +70,7 @@ const Router = () => {
     },
     {
       path: publicURL.SIGNIN,
-      element: <Signin onClick={() => handleSignIn('teste@uhas.com')} />
+      element: <Suspense fallback={<Loading size='bg' />}><Signin onClick={() => handleSignIn('teste@uhas.com')} /></Suspense>
     },
     {
       path: '*',

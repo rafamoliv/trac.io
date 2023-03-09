@@ -14,6 +14,7 @@ import { privateURL, publicURL } from '@/routes/urls';
 import { IconTracIO } from '@/assets';
 import { LogoFigure, LogoImage, ProfileFigure, ProfileImage, MenuBottom, MenuContent, ProfileContent } from '../SystemPage.style';
 import { AppContext } from '@/context/AppContext';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 /**
  * Internal pages template root
@@ -38,6 +39,8 @@ const getItem = (
 }
 
 export const Root = ({ children }: ChildrenProps) => {
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
   const { t, i18n } = useTranslation('systemPagesText')
   const [collapsed, setCollapsed] = useState(false);
   const { handleSignIn, handleSignOut, user } = useContext(AppContext)
@@ -81,7 +84,7 @@ export const Root = ({ children }: ChildrenProps) => {
           <LogoImage alt={t('alt')} src={IconTracIO} />
         </LogoFigure>
         <MenuContent>
-          <Menu defaultSelectedKeys={[DASHBOARD]} mode="inline" onClick={(info) => console.log(info.key)} items={items} />
+          <Menu defaultSelectedKeys={[pathname]} mode="inline" onClick={(info) => navigate(info.key)} items={items} />
           <MenuBottom>
             <div className="d-flex gap-1">
               <button onClick={() => i18n.changeLanguage('ptbr')}>PT</button>
