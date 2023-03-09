@@ -1,19 +1,44 @@
 import { useTranslation } from 'react-i18next'
 
 import { SystemPage } from '@/templates/SystemPage'
+import { Card } from '@/components'
+import { Col, Row, Input, Avatar } from 'antd';
+import { SlidersOutlined } from '@ant-design/icons';
+import { ContentHeader } from './Dashboard.styles';
 
 const Home = () => {
   const { t } = useTranslation('pgHome')
 
   console.log(t('title'))
 
+  const onSearch = (value: string) => console.log(value);
+
   return (
     <SystemPage.Root>
       <SystemPage.Header title='Dashboard'>
-        Teste
+        <ContentHeader>
+          <Input.Search placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />
+          <Avatar shape="square" style={{ backgroundColor: '#fff' }} icon={<SlidersOutlined style={{ color: '#d6d6d6' }} />} />
+        </ContentHeader>
       </SystemPage.Header>
       <SystemPage.Section>
-        Dash
+        <Row gutter={[16, 16]}>
+          <Col className="gutter-row" sm={24}>
+            <Card title='Assets'>
+              Dashboard
+            </Card>
+          </Col>
+          <Col className="gutter-row" sm={24} lg={12}>
+            <Card title='Assets'>
+              Dashboard
+            </Card>
+          </Col>
+          <Col className="gutter-row" sm={24} lg={12}>
+            <Card title='Assets'>
+              Dashboard
+            </Card>
+          </Col>
+        </Row>
       </SystemPage.Section>
     </SystemPage.Root>
   )
