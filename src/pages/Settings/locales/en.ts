@@ -1,12 +1,14 @@
 const settingsEn = {
   pgSettings: {
-    title: 'Boilerplate Vite + React',
-    summary: 'Click on the Vite and React logos to learn more',
-    count: 'count is {{value}}',
-    redux: 'Call redux:',
-    btn_redux: 'Shoot redux',
-    btn_atom: 'Atom test',
-    btn_signout: 'Sign out'
+    title: 'Settings',
+    card_language: 'Change default language',
+    notification_title: 'Change default language',
+    notification_msg: 'Standard language successfully changed!',
+    language: {
+      brazilianPortuguese: 'Brazilian Portuguese',
+      english: 'English',
+      spanish: 'Spanish'
+    }
   }
 }
 
