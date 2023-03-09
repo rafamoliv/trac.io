@@ -20,8 +20,6 @@ import { Figure, Image } from '../SystemPage.style';
  * @param {ReactNode} children
  */
 
-const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, UNITS, USERS, SETTINGS } = privateURL
-
 type MenuItem = Required<MenuProps>['items'][number];
 
 const getItem = (
@@ -41,6 +39,8 @@ const getItem = (
 export const Root = ({ children }: ChildrenProps) => {
   const { t, i18n } = useTranslation('systemPagesText')
   const [collapsed, setCollapsed] = useState(false);
+
+  const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, UNITS, USERS, SETTINGS } = privateURL
 
   const menuItemsText = {
     dashboard: t('systemPagesText:menu.dashboard'),
