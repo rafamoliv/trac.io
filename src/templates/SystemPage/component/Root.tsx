@@ -6,15 +6,17 @@ import {
   TeamOutlined,
   DeploymentUnitOutlined,
   SettingOutlined,
-  LogoutOutlined
+  LogoutOutlined,
+  UserOutlined
 } from '@ant-design/icons';
-import { MenuProps, Layout, Menu, Typography } from 'antd';
+import { MenuProps, Layout, Menu, Typography, Avatar, Image } from 'antd';
 import { useContext, useState } from 'react';
 import { privateURL, publicURL } from '@/routes/urls';
 import { IconTracIO } from '@/assets';
-import { LogoFigure, LogoImage, ProfileFigure, ProfileImage, MenuBottom, MenuContent, ProfileContent } from '../SystemPage.style';
+import { Flags, LogoFigure, MenuContent, MenuTop, ProfileContent, ProfileName } from '../SystemPage.style';
 import { AppContext } from '@/context/AppContext';
 import { useLocation, useNavigate } from 'react-router-dom';
+import config from '../SystemPage.config';
 
 /**
  * Internal pages template root
@@ -81,24 +83,27 @@ export const Root = ({ children }: ChildrenProps) => {
     <Layout style={{ minHeight: '100vh' }}>
       <Layout.Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} theme='light'>
         <LogoFigure>
-          <LogoImage alt={t('alt')} src={IconTracIO} />
+          <Image
+            alt={t('alt')}
+            height={32}
+            preview={false}
+            src={IconTracIO}
+          />
         </LogoFigure>
         <MenuContent>
-          <Menu defaultSelectedKeys={[pathname]} mode="inline" onClick={(info) => navigate(info.key)} items={items} />
-          <MenuBottom>
-            <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
-            <div className="d-flex gap-1">
-              <button onClick={() => i18n.changeLanguage('ptbr')}>PT</button>
-              <button onClick={() => i18n.changeLanguage('en')}>EN</button>
-            </div>
-            <ProfileContent>
-              <ProfileFigure>
-                <ProfileImage alt={user?.name} src={user?.avatar} />
-              </ProfileFigure>
-              <Typography.Paragraph style={{ marginBottom: 0 }}>{user?.name}</Typography.Paragraph>
-            </ProfileContent>
+          <MenuTop>
+            <Menu defaultSelectedKeys={[pathname]} mode="inline" onClick={(info) => navigate(info.key)} items={items} />
             <Menu mode="inline" onClick={() => handleSignOut()} items={signOutMenuItem} />
-          </MenuBottom>
+            <Flags>
+              <Avatar alt={'Brazil flag'} onClick={() => i18n.changeLanguage('ptbr')} shape="square" size="small" src={config.flags.brazil} style={{ cursor: 'pointer' }} />
+              <Avatar alt={'US flag'} onClick={() => i18n.changeLanguage('en')} shape="square" size="small" src={config.flags.us} style={{ cursor: 'pointer' }} />
+            </Flags>
+            <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
+          </MenuTop>
+          <ProfileContent>
+            <Avatar alt={user?.name} icon={<UserOutlined />} shape="square" size="large" src={user?.avatar} />
+            <ProfileName collapsed={collapsed ? 1 : 0} style={{ marginBottom: 0, marginLeft: 8 }}>{user?.name}</ProfileName>
+          </ProfileContent>
         </MenuContent>
       </Layout.Sider>
       <Layout className="site-layout">
