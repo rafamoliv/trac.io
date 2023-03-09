@@ -43,14 +43,14 @@ const Router = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!user) navigate(publicURL.SIGNIN)
+    //if (!user) navigate(publicURL.SIGNIN)
     if (user) navigate(privateURL.DASHBOARD)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
   let routes = useRoutes([
     {
-      element: <ProtectedRoute user={user} />,
+      element: <ProtectedRoute user={'user'} />,
       children: [
         {
           path: privateURL.DASHBOARD,

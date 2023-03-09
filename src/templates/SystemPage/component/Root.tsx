@@ -8,11 +8,11 @@ import {
   SettingOutlined,
   LogoutOutlined
 } from '@ant-design/icons';
-import { MenuProps, Layout, Menu } from 'antd';
+import { MenuProps, Layout, Menu, Typography } from 'antd';
 import { useContext, useState } from 'react';
 import { privateURL, publicURL } from '@/routes/urls';
 import { IconTracIO } from '@/assets';
-import { Figure, Image } from '../SystemPage.style';
+import { LogoFigure, LogoImage, ProfileFigure, ProfileImage, MenuBottom, MenuContent, ProfileContent } from '../SystemPage.style';
 import { AppContext } from '@/context/AppContext';
 
 /**
@@ -40,7 +40,7 @@ const getItem = (
 export const Root = ({ children }: ChildrenProps) => {
   const { t, i18n } = useTranslation('systemPagesText')
   const [collapsed, setCollapsed] = useState(false);
-  const { handleSignIn, handleSignOut } = useContext(AppContext)
+  const { handleSignIn, handleSignOut, user } = useContext(AppContext)
 
   const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, UNITS, USERS, SETTINGS } = privateURL
 
@@ -77,16 +77,26 @@ export const Root = ({ children }: ChildrenProps) => {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Layout.Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} theme='light'>
-        <Figure>
-          <Image alt={t('alt')} src={IconTracIO} />
-        </Figure>
-        <Menu defaultSelectedKeys={[DASHBOARD]} mode="inline" onClick={(info) => console.log(info.key)} items={items} />
-        <div className="d-flex gap-1">
-          <button onClick={() => i18n.changeLanguage('ptbr')}>PT</button>
-          <button onClick={() => i18n.changeLanguage('en')}>EN</button>
-        </div>
-        <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
-        <Menu mode="inline" onClick={() => handleSignOut()} items={signOutMenuItem} />
+        <LogoFigure>
+          <LogoImage alt={t('alt')} src={IconTracIO} />
+        </LogoFigure>
+        <MenuContent>
+          <Menu defaultSelectedKeys={[DASHBOARD]} mode="inline" onClick={(info) => console.log(info.key)} items={items} />
+          <MenuBottom>
+            <div className="d-flex gap-1">
+              <button onClick={() => i18n.changeLanguage('ptbr')}>PT</button>
+              <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+            </div>
+            <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
+            <ProfileContent>
+              <ProfileFigure>
+                <ProfileImage alt={user?.name} src={user?.avatar} />
+              </ProfileFigure>
+              <Typography.Paragraph style={{ marginBottom: 0 }}>{user?.name}</Typography.Paragraph>
+            </ProfileContent>
+            <Menu mode="inline" onClick={() => handleSignOut()} items={signOutMenuItem} />
+          </MenuBottom>
+        </MenuContent>
       </Layout.Sider>
       <Layout className="site-layout">
         {children}
