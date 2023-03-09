@@ -1,6 +1,10 @@
 const systemPagesEn = {
   systemPagesText: {
     alt: 'trac.io icon',
+    flags: {
+      brazil: 'Brazil flag',
+      us: 'US flag'
+    },
     menu: {
       dashboard: 'Dashboard',
       products: 'Products',

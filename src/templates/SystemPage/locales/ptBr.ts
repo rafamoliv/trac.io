@@ -1,6 +1,10 @@
 const systemPagesPtBr = {
   systemPagesText: {
     alt: 'ícone trac.io',
+    flags: {
+      brazil: 'Bandeira do Brasil',
+      us: 'Bandeira dos EUA'
+    },
     menu: {
       dashboard: 'Painel',
       products: 'Produtos',

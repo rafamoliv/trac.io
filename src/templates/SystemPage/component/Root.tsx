@@ -50,15 +50,15 @@ export const Root = ({ children }: ChildrenProps) => {
   const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, UNITS, USERS, SETTINGS } = privateURL
 
   const menuItemsText = {
-    dashboard: t('systemPagesText:menu.dashboard'),
-    products: t('systemPagesText:menu.products'),
-    assets: t('systemPagesText:menu.assets'),
-    workorders: t('systemPagesText:menu.workorders'),
-    companies: t('systemPagesText:menu.companies'),
-    units: t('systemPagesText:menu.units'),
-    users: t('systemPagesText:menu.users'),
-    settings: t('systemPagesText:menu.settings'),
-    logout: t('systemPagesText:menu.logout')
+    dashboard: t('menu.dashboard'),
+    products: t('menu.products'),
+    assets: t('menu.assets'),
+    workorders: t('menu.workorders'),
+    companies: t('menu.companies'),
+    units: t('menu.units'),
+    users: t('menu.users'),
+    settings: t('menu.settings'),
+    logout: t('menu.logout')
   }
 
   const items: MenuItem[] = [
@@ -95,8 +95,8 @@ export const Root = ({ children }: ChildrenProps) => {
             <Menu defaultSelectedKeys={[pathname]} mode="inline" onClick={(info) => navigate(info.key)} items={items} />
             <Menu mode="inline" onClick={() => handleSignOut()} items={signOutMenuItem} />
             <Flags>
-              <Avatar alt={'Brazil flag'} onClick={() => i18n.changeLanguage('ptbr')} shape="square" size="small" src={config.flags.brazil} style={{ cursor: 'pointer' }} />
-              <Avatar alt={'US flag'} onClick={() => i18n.changeLanguage('en')} shape="square" size="small" src={config.flags.us} style={{ cursor: 'pointer' }} />
+              <Avatar alt={t('flags.brazil')} onClick={() => i18n.changeLanguage('ptbr')} shape="square" size="small" src={config.flags.brazil} style={{ cursor: 'pointer' }} />
+              <Avatar alt={t('flags.us')} onClick={() => i18n.changeLanguage('en')} shape="square" size="small" src={config.flags.us} style={{ cursor: 'pointer' }} />
             </Flags>
             <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
           </MenuTop>
