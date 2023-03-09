@@ -1,12 +1,14 @@
 <center>
-  <img src=".gitlab/assets/logo-vite-react.svg" alt="A logo vite and react" width="500" />
+  <img src=".gitlab/assets/trac.io-gray.svg" alt="A logo vite and react" width="500" />
 </center>
 <br /><br />
 
 # Vite React - Boilerplate
+
 Boilerplate para projetos usando Vite com react.
 
 ## Sumário
+
 - [O que utilizamos](#o-que-utilizamos)
 - [Configuração](#configuração)
   - [Requerimentos](#requerimentos)
@@ -21,7 +23,6 @@ Boilerplate para projetos usando Vite com react.
   - [Criando uma página](#criando-uma-página)
   - [Criando uma redux](#criando-um-redux)
 - [Fluxo para produção](#fluxo-para-produção)
-
 
 ### O que utilizamos ?
 
@@ -44,12 +45,15 @@ Boilerplate para projetos usando Vite com react.
 ## Configuração
 
 ### Requerimentos
+
 - Node v16.17.0
 - Yarn
 
 ### VsCode
+
 As configurações abaixo não são obrigatórias mas facilitam
 no desesenvolvimento na Ide VsCode
+
 1. Crie o arquivo `settings.json` dentro do `.vscode`, com as seguintes configurações:
 
 ```json
@@ -59,66 +63,80 @@ no desesenvolvimento na Ide VsCode
     "source.fixAll.eslint": true
   }
 }
-
 ```
 
 2. Crie o arquivo `jsconfig.json` no diretório raiz, com as seguintes configurações:
 
 ```json
 {
-  "compilerOptions" :  {
+  "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*" :  ["src/*"]
+      "@/*": ["src/*"]
     }
   },
   "exclude": ["dist"]
 }
 ```
+
 Essa configuração ajuda na execução de importações com alias de webpack. A prop `exclude` é por projeto. Se quiser entender melhor [acesse](https://code.visualstudio.com/docs/languages/jsconfig#_using-webpack-aliases)
 
 ### Variáveis de ambiente
+
 Para usar variáveis de ambiente, seguimos o modelo recomendado pelo Vite.
 
 **Obs: Esses arquivos são ignorados no .gitignore**
 
 #### Variáveis de ambiente para desenvolvimento
+
 Digite o seguinte comando no seu terminal para copiar o arquivo de exemplo e
 renomeá-lo para `.env.development.local`:
+
 ```bash
 cp .env-example .env.development.local
 ```
+
 Variáveis locais:
+
 ```
 REACT_ENVIRONMENT = 'DEVELOPMENT'
 ```
+
 #### Variáveis de ambiente para produção
+
 Digite o seguinte comando no seu terminal para copiar o arquivo de exemplo e
 renomeá-lo para `.env`:
+
 ```bash
 cp .env-example .env
 ```
+
 Valores de produção:
+
 ```
 REACT_ENVIRONMENT = 'PRODUCTION'
 ```
+
 ### Internacionalização
+
 Acesso o [Readme](src/locales/README.md) exclusivo para essa parte para tirar as suas
 dúvidas.
 
 ### Comandos
-* `dev:app`: roda a aplicação e inicia um servidor local em`http://localhost:5173/`.
-* `build:app`: gera para produção.
-* `preview:app`: gera para produção e inicia um servidor local em `http://localhost:4173/`.
-* `lint`: roda o linter em todos os componentes e páginas.
-* `format`: roda o prettier para formatar todos os componentes e páginas.
-* `test`: roda o vitest em modo de observação.
-* `test:coverage`: roda o vites com cobertura de código.
-* `generate`: roda o plop para gerar arquivos.
-* `storybook`: roda o storybook e inicia um servidor local em `http://localhost:6006/`.
-* `storybook:build`: gera um build para produção do storybook.
+
+- `dev:app`: roda a aplicação e inicia um servidor local em`http://localhost:5173/`.
+- `build:app`: gera para produção.
+- `preview:app`: gera para produção e inicia um servidor local em `http://localhost:4173/`.
+- `lint`: roda o linter em todos os componentes e páginas.
+- `format`: roda o prettier para formatar todos os componentes e páginas.
+- `test`: roda o vitest em modo de observação.
+- `test:coverage`: roda o vites com cobertura de código.
+- `generate`: roda o plop para gerar arquivos.
+- `storybook`: roda o storybook e inicia um servidor local em `http://localhost:6006/`.
+- `storybook:build`: gera um build para produção do storybook.
 
 ## Fluxo para desenvolvimento
+
 1. Digite no terminal `yarn generate` e preencha as informações.
 2. Digite no terminal `yarn dev:app` para iniciar o projeto
 
@@ -177,5 +195,6 @@ Caso tenha alguma tradução, faça os seguintes passos:
 4. Importe e exporte a tradução.
 
 ## Fluxo para produção
+
 1. Digite no terminal `yarn preview:app`
 2. Publique os arquivos
