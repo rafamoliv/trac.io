@@ -1,4 +1,5 @@
-import React, { StrictMode, Suspense } from 'react'
+import { Suspense } from 'react'
+import { ConfigProvider, theme } from 'antd';
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
@@ -38,8 +39,12 @@ if (REACT_ENVIRONMENT === 'DEVELOPMENT') {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Provider store={Store}>
+  <Provider store={Store}>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.compactAlgorithm,
+      }}
+    >
       <MyThemeProvider>
         <BrowserRouter>
           <Suspense fallback={<h1>Loading...</h1>}>
@@ -47,6 +52,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </Suspense>
         </BrowserRouter>
       </MyThemeProvider>
-    </Provider>
-  </StrictMode>
+    </ConfigProvider>
+  </Provider>
 )
