@@ -86,11 +86,11 @@ export const Root = ({ children }: ChildrenProps) => {
         <MenuContent>
           <Menu defaultSelectedKeys={[pathname]} mode="inline" onClick={(info) => navigate(info.key)} items={items} />
           <MenuBottom>
+            <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
             <div className="d-flex gap-1">
               <button onClick={() => i18n.changeLanguage('ptbr')}>PT</button>
               <button onClick={() => i18n.changeLanguage('en')}>EN</button>
             </div>
-            <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
             <ProfileContent>
               <ProfileFigure>
                 <ProfileImage alt={user?.name} src={user?.avatar} />

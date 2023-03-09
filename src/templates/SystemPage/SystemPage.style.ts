@@ -30,7 +30,7 @@ export const ProfileContent = styled.div`
   align-items: center;
   display: flex;
   margin: 4px;
-  padding: 0 8px 0 16px;
+  padding: 0 16px 0 16px;
 `
 
 export const ProfileFigure = styled.figure`
