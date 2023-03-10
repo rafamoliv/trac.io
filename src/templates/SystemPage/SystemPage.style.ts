@@ -9,8 +9,13 @@ export const Header = styled(Layout.Header)`
   align-items: center;
   background: transparent;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 0 16px;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+  }
 `
 
 export const MenuContent = styled.nav`
@@ -24,7 +29,7 @@ export const MenuTop = styled.div``
 
 export const Flags = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 4px;
   justify-content: center;
 `
 
