@@ -1362,6 +1362,11 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@highcharts/map-collection@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@highcharts/map-collection/-/map-collection-2.0.1.tgz#c5eac79b9711c75248d4219c53be9b6a07704c9d"
+  integrity sha512-eC5sEMC8LoCVMCz4BKuREcS3wVBBSFaRClJ7/vVZxd4nJe0VEykSFfQJwh8lpY4oJDy46iYrFzy3fwsTo9hmqg==
+
 "@humanwhocodes/config-array@^0.10.5":
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.5.tgz#bb679745224745fff1e9a41961c1d45a49f81c04"
