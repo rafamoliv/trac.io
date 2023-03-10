@@ -27,14 +27,14 @@ export const MapChart = (props: HighchartsReact.Props) => {
             min: 0,
             max: 30,
             dataClasses: [{
-                to: 3,
+                to: 9,
                 color: "#F0F5F9"
             }, {
-                from: 3,
-                to: 10,
+                from: 10,
+                to: 19,
                 color: "#C9D6DF"
             }, {
-                from: 10,
+                from: 20,
                 to: 30,
                 color: "#52616B"
             }]

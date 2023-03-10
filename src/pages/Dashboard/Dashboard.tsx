@@ -41,6 +41,16 @@ const Home = () => {
               <RadialBarChart data={assetsData} />
             </Card>
           </Col>
+          <Col className="gutter-row" sm={24}>
+            <Card title={t('cards.healthscore')}>
+              Card
+            </Card>
+          </Col>
+          <Col className="gutter-row" sm={24}>
+            <Card title={t('cards.healthscore')}>
+              Card
+            </Card>
+          </Col>
         </Row>
       </SystemPage.Section>
     </SystemPage.Root>
