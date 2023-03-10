@@ -1,17 +1,17 @@
 const dashboardEn = {
   pgDashboard: {
-    title: 'Boilerplate Vite + React',
-    summary: 'Click on the Vite and React logos to learn more',
-    count: 'count is {{value}}',
-    redux: 'Call redux:',
-    btn_redux: 'Shoot redux',
-    btn_atom: 'Atom test',
-    btn_signout: 'Sign out',
+    title: 'Dashboard',
     cards: {
       healthscore: 'Healthscore',
       activeCustomers: 'Active customers',
-      maxTemp: 'Maximum engine temperature'
-    }
+      maxTemp: 'Maximum engine temperature',
+      workorders: 'Work orders in progress',
+      recentEmails: 'Recent emails'
+    },
+    recentEmailsTable: {
+      columns: ['Company', 'Subject', 'Date']
+    },
+    date: `{{value}} mins ago`
   }
 }
 

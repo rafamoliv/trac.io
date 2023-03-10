@@ -1,17 +1,17 @@
 const dashboardPtBr = {
   pgDashboard: {
-    title: 'Boilerplate Vite + React',
-    summary: 'Clique nos ícones Vite e React para saber mais',
-    count: 'Contador em {{value}}',
-    redux: 'Chamada do redux:',
-    btn_redux: 'Disparar redux',
-    btn_atom: 'Teste de átomo',
-    btn_signout: 'Sair',
+    title: 'Painel de controle',
     cards: {
       healthscore: 'Pontuação de saúde',
       activeCustomers: 'Clientes ativos',
-      maxTemp: 'Temperatura máxima do motor'
-    }
+      maxTemp: 'Temperatura máxima do motor',
+      workorders: 'Ordens de trabalho em progresso',
+      recentEmails: 'Emails recentes'
+    },
+    recentEmailsTable: {
+      columns: ['Empresa', 'Assunto', 'Data']
+    },
+    date: `{{value}} minutos atrás`
   }
 }
 
