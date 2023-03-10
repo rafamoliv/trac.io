@@ -20,6 +20,7 @@ export const ColumnChart = ({ data }: columnChartProps) => {
     const chartOptions = {
         chart: {
             type: 'column',
+            height: 196
         },
         title: {
             text: ''
@@ -39,7 +40,7 @@ export const ColumnChart = ({ data }: columnChartProps) => {
                 data: data.map((item: chartDataProps) => item?.healthscore),
                 showInLegend: false,
             },
-        ],
+        ]
     }
 
     return <HighchartsReact highcharts={Highcharts} options={chartOptions} />

@@ -23,7 +23,8 @@ export const RadialBarChart = ({ data }: radialBarChartProps) => {
         chart: {
             type: 'column',
             inverted: true,
-            polar: true
+            polar: true,
+            height: 288
         },
         title: {
             text: ''

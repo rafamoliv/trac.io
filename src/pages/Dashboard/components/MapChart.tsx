@@ -11,6 +11,9 @@ export const MapChart = (props: HighchartsReact.Props) => {
     const { t } = useTranslation('pgDashboard')
 
     const chartOptions: Highcharts.Options = {
+        chart: {
+            height: 288
+        },
         title: {
             text: ''
         },
