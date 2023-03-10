@@ -6,7 +6,10 @@ const dashboardEn = {
     redux: 'Call redux:',
     btn_redux: 'Shoot redux',
     btn_atom: 'Atom test',
-    btn_signout: 'Sign out'
+    btn_signout: 'Sign out',
+    cards: {
+      healthscore: 'Healthscore'
+    }
   }
 }
 

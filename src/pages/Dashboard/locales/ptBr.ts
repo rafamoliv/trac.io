@@ -6,7 +6,10 @@ const dashboardPtBr = {
     redux: 'Chamada do redux:',
     btn_redux: 'Disparar redux',
     btn_atom: 'Teste de átomo',
-    btn_signout: 'Sair'
+    btn_signout: 'Sair',
+    cards: {
+      healthscore: 'Pontuação de saúde'
+    }
   }
 }
 

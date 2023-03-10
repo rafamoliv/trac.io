@@ -5,11 +5,12 @@ import { Card } from '@/components'
 import { Col, Row, Input, Avatar } from 'antd';
 import { SlidersOutlined } from '@ant-design/icons';
 import { ContentHeader } from './Dashboard.styles';
+import { ColumnChart } from './components/ColumnChart';
+import { useFetchAssetsQuery } from '@/services/api';
 
 const Home = () => {
-  const { t } = useTranslation('pgHome')
-
-  console.log(t('title'))
+  const { t } = useTranslation('pgDashboard')
+  const { data: assetsData = [] } = useFetchAssetsQuery('')
 
   const onSearch = (value: string) => console.log(value);
 
@@ -24,8 +25,8 @@ const Home = () => {
       <SystemPage.Section>
         <Row gutter={[16, 16]}>
           <Col className="gutter-row" sm={24}>
-            <Card title='Assets'>
-              Dashboard
+            <Card title={t('cards.healthscore')}>
+              <ColumnChart data={assetsData} />
             </Card>
           </Col>
           <Col className="gutter-row" sm={24} lg={12}>
