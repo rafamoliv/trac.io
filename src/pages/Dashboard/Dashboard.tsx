@@ -37,7 +37,7 @@ const Home = () => {
             </Card>
           </Col>
           <Col className="gutter-row" sm={24} lg={12}>
-            <Card title='Assets'>
+            <Card title={t('cards.maxTemp')}>
               <RadialBarChart data={assetsData} />
             </Card>
           </Col>
