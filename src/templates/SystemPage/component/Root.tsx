@@ -119,7 +119,7 @@ export const Root = ({ children }: ChildrenProps) => {
           </ProfileContent>
         </MenuContent>
       </Layout.Sider>
-      <Layout className="site-layout">
+      <Layout className="site-layout" style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '1440px' }}>
         {children}
       </Layout>
     </Layout>
