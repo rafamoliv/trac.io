@@ -81,7 +81,20 @@ export const Root = ({ children }: ChildrenProps) => {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Layout.Sider collapsible collapsed={collapsed} breakpoint={'md'} onCollapse={(value) => setCollapsed(value)} theme='light'>
+      <Layout.Sider
+        collapsible
+        collapsed={collapsed}
+        breakpoint={'md'}
+        onCollapse={(value) => setCollapsed(value)}
+        theme='light'
+        style={{
+          overflow: "auto",
+          height: "100vh",
+          position: "sticky",
+          top: 0,
+          left: 0
+        }}
+      >
         <LogoFigure>
           <Image
             alt={t('alt')}
