@@ -8,7 +8,8 @@ const dashboardEn = {
     btn_atom: 'Atom test',
     btn_signout: 'Sign out',
     cards: {
-      healthscore: 'Healthscore'
+      healthscore: 'Healthscore',
+      activeCustomers: 'Active customers'
     }
   }
 }

@@ -8,7 +8,8 @@ const dashboardPtBr = {
     btn_atom: 'Teste de átomo',
     btn_signout: 'Sair',
     cards: {
-      healthscore: 'Pontuação de saúde'
+      healthscore: 'Pontuação de saúde',
+      activeCustomers: 'Clientes ativos'
     }
   }
 }

@@ -7,6 +7,7 @@ import { SlidersOutlined } from '@ant-design/icons';
 import { ContentHeader } from './Dashboard.styles';
 import { ColumnChart } from './components/ColumnChart';
 import { useFetchAssetsQuery } from '@/services/api';
+import { MapChart } from './components/MapChart';
 
 const Home = () => {
   const { t } = useTranslation('pgDashboard')
@@ -30,8 +31,8 @@ const Home = () => {
             </Card>
           </Col>
           <Col className="gutter-row" sm={24} lg={12}>
-            <Card title='Assets'>
-              Dashboard
+            <Card title={t('cards.activeCustomers')} >
+              <MapChart />
             </Card>
           </Col>
           <Col className="gutter-row" sm={24} lg={12}>
