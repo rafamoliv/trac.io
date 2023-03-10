@@ -3,20 +3,12 @@ import HighchartsReact from 'highcharts-react-official'
 import highchartsAccessibility from "highcharts/modules/accessibility";
 import highchartsMore from "highcharts/highcharts-more";
 import { useTranslation } from 'react-i18next'
+import { chartProps, chartRadialDataProps } from '../types';
 
 highchartsMore(Highcharts);
 highchartsAccessibility(Highcharts);
 
-interface radialBarChartProps {
-    data: []
-}
-
-interface chartDataProps extends radialBarChartProps {
-    name: string
-    healthscore: string
-}
-
-export const RadialBarChart = ({ data }: radialBarChartProps) => {
+export const RadialBarChart = ({ data }: chartProps) => {
     const { t } = useTranslation('pgDashboard')
 
     const chartOptions = {
@@ -50,7 +42,7 @@ export const RadialBarChart = ({ data }: radialBarChartProps) => {
                 }
             },
             lineWidth: 0,
-            categories: data.map((item: chartDataProps) => item?.name)
+            categories: data.map((item: chartRadialDataProps) => item?.name)
         },
         yAxis: {
             crosshair: {
@@ -74,7 +66,7 @@ export const RadialBarChart = ({ data }: radialBarChartProps) => {
         series: [{
             name: t('cards.maxTemp'),
             showInLegend: false,
-            data: data.map((item: chartDataProps) => item?.healthscore),
+            data: data.map((item: chartRadialDataProps) => item?.specifications?.maxTemp),
             colorByPoint: true
         }]
     }
