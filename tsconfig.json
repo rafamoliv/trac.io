@@ -4,7 +4,9 @@
     "baseUrl": "./",
     "paths": {
       "@/*" :  ["src/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "exclude": ["dist", "node_modules"],
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"]
