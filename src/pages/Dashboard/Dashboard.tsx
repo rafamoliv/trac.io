@@ -112,7 +112,7 @@ const Home = () => {
           </Col>
           <Col className="gutter-row" sm={24}>
             <Card title={t('cards.recentEmails')}>
-              <Table columns={tableRecentEmailColumns} dataSource={tableRecentEmailData} />
+              <Table columns={tableRecentEmailColumns} dataSource={tableRecentEmailData} pagination={false} />
             </Card>
           </Col>
         </Row>
