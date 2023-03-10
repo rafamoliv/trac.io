@@ -27,6 +27,7 @@ export const MapChart = (props: HighchartsReact.Props) => {
             min: 0,
             max: 30,
             dataClasses: [{
+                from: 0,
                 to: 9,
                 color: "#F0F5F9"
             }, {
