@@ -8,6 +8,7 @@ import { ContentHeader } from './Dashboard.styles';
 import { ColumnChart } from './components/ColumnChart';
 import { useFetchAssetsQuery } from '@/services/api';
 import { MapChart } from './components/MapChart';
+import { RadialBarChart } from './components/RadialBarChart';
 
 const Home = () => {
   const { t } = useTranslation('pgDashboard')
@@ -37,7 +38,7 @@ const Home = () => {
           </Col>
           <Col className="gutter-row" sm={24} lg={12}>
             <Card title='Assets'>
-              Dashboard
+              <RadialBarChart data={assetsData} />
             </Card>
           </Col>
         </Row>

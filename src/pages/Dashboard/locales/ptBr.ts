@@ -9,7 +9,8 @@ const dashboardPtBr = {
     btn_signout: 'Sair',
     cards: {
       healthscore: 'Pontuação de saúde',
-      activeCustomers: 'Clientes ativos'
+      activeCustomers: 'Clientes ativos',
+      maxTemp: 'Temperatura máxima do motor'
     }
   }
 }

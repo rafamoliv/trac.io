@@ -9,7 +9,8 @@ const dashboardEn = {
     btn_signout: 'Sign out',
     cards: {
       healthscore: 'Healthscore',
-      activeCustomers: 'Active customers'
+      activeCustomers: 'Active customers',
+      maxTemp: 'Maximum engine temperature'
     }
   }
 }
