@@ -1,2 +1,2 @@
-export { default } from './Settings'
-export { settingsEn, settingsPtBr } from './locales'
+export { default } from './Companies'
+export { companiesEn, companiesPtBr } from './locales'

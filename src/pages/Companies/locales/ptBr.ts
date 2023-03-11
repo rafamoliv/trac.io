@@ -1,15 +1,16 @@
-const settingsPtBr = {
-  pgSettings: {
-    title: 'Configurações',
-    card_language: 'Mudar língua padrão',
-    notification_title: 'Mudar língua padrão',
-    notification_msg: 'Língua padrão alterada com sucesso!',
-    language: {
-      brazilianPortuguese: 'Português Brasileiro',
-      english: 'Inglês',
-      spanish: 'Espanhol'
+const companiesPtBr = {
+  pgCompanies: {
+    title: 'Empresas',
+    description: {
+      labels: {
+        description: 'Descrição',
+        address: 'Endereço',
+        zipCode: 'Código postal',
+        paymentAccount: 'Conta de pagamento',
+        units: 'Unidades'
+      }
     }
   }
 }
 
-export default settingsPtBr
+export default companiesPtBr

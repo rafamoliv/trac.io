@@ -1,15 +1,16 @@
-const settingsEn = {
-  pgSettings: {
-    title: 'Settings',
-    card_language: 'Change default language',
-    notification_title: 'Change default language',
-    notification_msg: 'Standard language successfully changed!',
-    language: {
-      brazilianPortuguese: 'Brazilian Portuguese',
-      english: 'English',
-      spanish: 'Spanish'
+const companiesPtBr = {
+  pgCompanies: {
+    title: 'Companies',
+    description: {
+      labels: {
+        description: 'Description',
+        address: 'Address',
+        zipCode: 'Zip code',
+        paymentAccount: 'Payment account',
+        units: 'Units'
+      }
     }
   }
 }
 
-export default settingsEn
+export default companiesPtBr

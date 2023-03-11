@@ -1,6 +1,5 @@
 import i18next from 'i18next'
 import { useEffect, useContext, lazy, Suspense } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, Outlet, useNavigate, useRoutes } from 'react-router-dom'
 
 import { privateURL, publicURL } from './urls'
@@ -12,6 +11,7 @@ const Dashboard = lazy(() => import('@/pages/Dashboard'))
 const Settings = lazy(() => import('@/pages/Settings'))
 const Assets = lazy(() => import('@/pages/Assets'))
 const Workorders = lazy(() => import('@/pages/Workorders'))
+const Companies = lazy(() => import('@/pages/Companies'))
 
 // eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({ user }) => {
@@ -71,6 +71,10 @@ const Router = () => {
         {
           path: privateURL.WORKORDERS,
           element: <Suspense fallback={<Loading size='bg' />}><Workorders /></Suspense>
+        },
+        {
+          path: privateURL.COMPANIES,
+          element: <Suspense fallback={<Loading size='bg' />}><Companies /></Suspense>
         },
         {
           path: '*',
