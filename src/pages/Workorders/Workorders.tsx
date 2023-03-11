@@ -37,7 +37,7 @@ const Workorders = () => {
             {workordersData.map((workorder: workordersProps, index: Key) => (
               <Col key={index} className="gutter-row" sm={24} lg={12} style={{ cursor: 'pointer' }}>
                 <Badge.Ribbon text={takeWorkordersByPriority[workorder?.priority].text} color={takeWorkordersByPriority[workorder?.priority].color}>
-                  <Card>
+                  <Card style={{ cursor: 'default' }}>
                     <Divider orientation="left">{workorder?.title}</Divider>
                     <Descriptions
                       bordered
