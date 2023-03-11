@@ -9,7 +9,6 @@ import { ColumnChart } from './components/ColumnChart';
 import { useFetchAssetsQuery, useFetchWorkordersQuery } from '@/services/api';
 import { MapChart } from './components/MapChart';
 import { RadialBarChart } from './components/RadialBarChart';
-import config from './Dashboard.config'
 import { tableRecentEmailsDataType } from './types';
 import { faker } from '@faker-js/faker';
 
