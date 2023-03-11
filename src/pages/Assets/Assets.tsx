@@ -53,7 +53,7 @@ const Assets = () => {
       <SystemPage.Section>
         <Row gutter={[16, 16]}>
           <Loading loading={isLoading}>
-            {takeFilteredAssets().map((asset: assetsDataProps, index: number) => (
+            {takeFilteredAssets().map((asset: assetsDataProps, index: Key) => (
               <Col key={index} onClick={() => doOpenModal(asset?.id)} className="gutter-row" sm={24} md={12} lg={8} xl={6} style={{ cursor: 'pointer' }}>
                 <Badge.Ribbon text={takeAssetsByStatus[asset?.status].text} color={takeAssetsByStatus[asset?.status].color}>
                   <Card hoverable cover={

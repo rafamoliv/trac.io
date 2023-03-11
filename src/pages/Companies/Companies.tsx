@@ -22,7 +22,7 @@ const Companies = () => {
       <SystemPage.Header title={t('title')} />
       <SystemPage.Section>
         <Loading loading={isLoadingCompanies}>
-          {companiesData.map((companies: companiesProps, index: number) => (
+          {companiesData.map((companies: companiesProps, index: Key) => (
             <Card key={index}>
               <Divider orientation="left">{companies?.name}</Divider>
               <Descriptions
