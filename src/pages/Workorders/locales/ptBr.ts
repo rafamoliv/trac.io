@@ -1,12 +1,21 @@
 const workordersPtBr = {
   pgWorkorders: {
-    title: 'Boilerplate Vite + React',
-    summary: 'Clique nos ícones Vite e React para saber mais',
-    count: 'Contador em {{value}}',
-    redux: 'Chamada do redux:',
-    btn_redux: 'Disparar redux',
-    btn_atom: 'Teste de átomo',
-    btn_signout: 'Sair'
+    title: 'Ordens de serviço',
+    priorities: {
+      high: 'Alta'
+    },
+    status: {
+      completed: 'Completo',
+      inProgress: 'Em progresso'
+    },
+    description: {
+      labels: {
+        description: 'Descrição',
+        status: 'Status',
+        assignedUsers: 'Usuários atribuídos',
+        tasks: 'Tarefas'
+      }
+    }
   }
 }
 

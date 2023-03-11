@@ -4,7 +4,7 @@ import { Loading } from '@/components'
 import { Badge, Card, Col, Row, Image, Input, Modal, Typography, Progress, Timeline, Button } from 'antd';
 import { useFetchAssetsQuery, useLazyFetchAssetsByIdQuery } from '@/services/api';
 import { assetsDataProps } from './types';
-import { Key, useEffect, useState } from 'react';
+import { Key, useState } from 'react';
 import { CardContent, CardDetails, CardSpecifications, ModalContent } from './Assets.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
