@@ -67,10 +67,7 @@ export const Root = ({ children }: ChildrenProps) => {
       getItem(menuItemsText.assets, ASSETS),
       getItem(menuItemsText.workorders, WORKORDERS)
     ]),
-    getItem(menuItemsText.companies, 'sub2', <RocketOutlined />, [
-      getItem(menuItemsText.companies, COMPANIES),
-      getItem(menuItemsText.units, UNITS)
-    ]),
+    getItem(menuItemsText.companies, COMPANIES, <RocketOutlined />),
     getItem(menuItemsText.users, USERS, <TeamOutlined />),
     getItem(menuItemsText.settings, SETTINGS, <SettingOutlined />)
   ];
