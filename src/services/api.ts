@@ -70,13 +70,13 @@ export const api = createApi({
 
 export const {
   useFetchAssetsQuery,
-  useFetchAssetsByIdQuery,
+  useLazyFetchAssetsByIdQuery,
   useFetchUsersQuery,
-  useFetchUsersByIdQuery,
+  useLazyFetchUsersByIdQuery,
   useFetchUnitsQuery,
-  useFetchUnitsByIdQuery,
+  useLazyFetchUnitsByIdQuery,
   useFetchCompaniesQuery,
-  useFetchCompaniesByIdQuery,
+  useLazyFetchCompaniesByIdQuery,
   useFetchWorkordersQuery,
-  useFetchWorkordersByIdQuery
+  useLazyFetchWorkordersByIdQuery
 } = api
