@@ -12,6 +12,7 @@ const Settings = lazy(() => import('@/pages/Settings'))
 const Assets = lazy(() => import('@/pages/Assets'))
 const Workorders = lazy(() => import('@/pages/Workorders'))
 const Companies = lazy(() => import('@/pages/Companies'))
+const Users = lazy(() => import('@/pages/Users'))
 
 // eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({ user }) => {
@@ -75,6 +76,10 @@ const Router = () => {
         {
           path: privateURL.COMPANIES,
           element: <Suspense fallback={<Loading size='bg' />}><Companies /></Suspense>
+        },
+        {
+          path: privateURL.USERS,
+          element: <Suspense fallback={<Loading size='bg' />}><Users /></Suspense>
         },
         {
           path: '*',

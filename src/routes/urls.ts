@@ -4,7 +4,6 @@ export const privateURL = {
   ASSETS: '/assets',
   WORKORDERS: '/workorders',
   COMPANIES: '/companies',
-  UNITS: '/units',
   USERS: './users',
   SETTINGS: '/settings'
 }
