@@ -1,30 +1,29 @@
 import { useTranslation } from 'react-i18next'
 import { SystemPage } from '@/templates/SystemPage'
-import { Card, Loading } from '@/components'
-import { Col, Row, Image, Input, Modal, Typography } from 'antd';
+import { Loading } from '@/components'
+import { Badge, Card, Col, Row, Image, Input, Modal, Typography, Progress, Timeline, Button } from 'antd';
 import { useFetchAssetsQuery, useLazyFetchAssetsByIdQuery } from '@/services/api';
 import { assetsDataProps } from './types';
-import { useEffect, useState } from 'react';
+import { Key, useEffect, useState } from 'react';
+import { CardContent, CardDetails, CardSpecifications, ModalContent } from './Assets.styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { faPlugCircleBolt, faTemperatureHigh, faRotate } from '@fortawesome/free-solid-svg-icons';
+import { dateFormat } from '@/utils';
 
 const Assets = () => {
   const { t } = useTranslation('pgAssets')
   const [searchValue, setSearchValue] = useState('')
+  const [openModal, setOpenModal] = useState(false)
   const { data: assetsData = [], isLoading } = useFetchAssetsQuery('')
   const [takeAssetInfo, { currentData: assetByIdData }] = useLazyFetchAssetsByIdQuery()
 
-  const modalAssetInfo = () => {
-    Modal.info({
-      title: assetByIdData?.name,
-      content: (
-        <div>
-          <Typography.Text>{assetByIdData?.status}</Typography.Text>
-        </div>
-      ),
-      onOk() { },
-    });
-  };
-
   const onSearch = (value: string) => setSearchValue(value)
+
+  const doOpenModal = (id: Key) => {
+    takeAssetInfo(id)
+    setOpenModal(true)
+  }
 
   const takeFilteredAssets = () => {
     if (searchValue === '' || searchValue === undefined) {
@@ -38,11 +37,13 @@ const Assets = () => {
     )
   }
 
-  useEffect(() => {
-    if (assetByIdData) {
-      modalAssetInfo()
-    }
-  }, [assetByIdData])
+  const takeAssetsByStatus = {
+    inAlert: { color: 'yellow', text: t('status.inAlert') },
+    inOperation: { color: 'green', text: t('status.inOperation') },
+    inDowntime: { color: 'red', text: t('status.inDowntime') },
+    unplannedStop: { color: 'red', text: t('status.unplannedStop') },
+    plannedStop: { color: 'blue', text: t('status.plannedStop') }
+  }
 
   return (
     <SystemPage.Root>
@@ -53,19 +54,69 @@ const Assets = () => {
         <Row gutter={[16, 16]}>
           <Loading loading={isLoading}>
             {takeFilteredAssets().map((asset: assetsDataProps, index: number) => (
-              <Col key={index} onClick={() => takeAssetInfo(asset?.id)} className="gutter-row" sm={24} md={12} lg={8} style={{ cursor: 'pointer' }}>
-                <Card hoverable cover={
-                  <Image
-                    preview={false}
-                    height={168}
-                    src={asset?.image}
-                  />
-                }>
-                  {asset?.name}
-                </Card>
+              <Col key={index} onClick={() => doOpenModal(asset?.id)} className="gutter-row" sm={24} md={12} lg={8} xl={6} style={{ cursor: 'pointer' }}>
+                <Badge.Ribbon text={takeAssetsByStatus[asset?.status].text} color={takeAssetsByStatus[asset?.status].color}>
+                  <Card hoverable cover={
+                    <Image
+                      preview={false}
+                      height={168}
+                      src={asset?.image}
+                    />
+                  }>
+                    <CardContent>
+                      <Card.Meta title={asset?.name} description={asset?.model} />
+                      <CardDetails>
+                        <Typography.Title level={5}>{t('specifications')}</Typography.Title>
+                        <CardSpecifications>
+                          <CardSpecifications>
+                            <FontAwesomeIcon icon={faTemperatureHigh as IconProp} />
+                            <Typography.Text>{asset?.specifications?.maxTemp}º</Typography.Text>
+                          </CardSpecifications>
+                          <CardSpecifications>
+                            <FontAwesomeIcon icon={faPlugCircleBolt as IconProp} />
+                            <Typography.Text>{asset?.specifications?.power}kw</Typography.Text>
+                          </CardSpecifications>
+                          <CardSpecifications>
+                            <FontAwesomeIcon icon={faRotate as IconProp} />
+                            <Typography.Text>{asset?.specifications?.rpm}rpm</Typography.Text>
+                          </CardSpecifications>
+                        </CardSpecifications>
+                      </CardDetails>
+                      <CardDetails>
+                        <Typography.Title level={5}>{t('healthscore')}</Typography.Title>
+                        <Progress percent={asset?.healthscore} strokeColor={{ '0%': '#F0F5F9', '100%': '#C9D6DF' }} />
+                      </CardDetails>
+                    </CardContent>
+                  </Card>
+                </Badge.Ribbon>
               </Col>
             ))}
           </Loading>
+
+          {openModal && (
+            <Modal
+              footer={<Button onClick={() => setOpenModal(false)}>{t('btn', { context: 'close' })}</Button>}
+              open={openModal}
+              onCancel={() => setOpenModal(false)}
+              onOk={() => setOpenModal(false)}
+              title={assetByIdData?.name}
+            >
+              <ModalContent>
+                <Typography.Title level={5} style={{ textAlign: 'center' }}>{t('healthHistory')}</Typography.Title>
+                <Timeline
+                  mode="alternate"
+                  items={assetByIdData?.healthHistory?.map((asset) => ({
+                    color: takeAssetsByStatus[asset?.status].color,
+                    children: (
+                      <Typography.Text>
+                        {`${takeAssetsByStatus[asset?.status].text} ${dateFormat(asset?.timestamp)}`}
+                      </Typography.Text>
+                    )
+                  }))}
+                />
+              </ModalContent>
+            </Modal>
+          )}
         </Row>
       </SystemPage.Section>
     </SystemPage.Root>

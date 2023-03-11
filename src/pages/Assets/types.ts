@@ -6,4 +6,10 @@ export interface assetsDataProps {
   name: string
   status: string
   healthscore: number
+  model: string
+  specifications: {
+    maxTemp: number
+    power: number
+    rpm: number
+  }
 }
