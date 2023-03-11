@@ -4,9 +4,10 @@ import { useFetchUsersQuery, useFetchWorkordersQuery } from '@/services/api'
 import { Loading } from '@/components'
 import { Badge, Card, Col, Divider, Descriptions, Row, Avatar, Tooltip } from 'antd';
 import { Key } from 'react';
-import { usersProps, workordersProps } from './type';
+import { checklistProps, usersProps, workordersProps } from './type';
 import { faker } from '@faker-js/faker';
 import { initialLettersNameLastname } from '@/utils';
+import { TaskList } from './Workorders.styles';
 
 const Workorders = () => {
   const { t } = useTranslation('pgWorkorders')
@@ -57,7 +58,13 @@ const Workorders = () => {
                           ))}
                         </Avatar.Group>
                       </Descriptions.Item>
-                      <Descriptions.Item label={t('description.labels.tasks')}>$80.00</Descriptions.Item>
+                      <Descriptions.Item label={t('description.labels.tasks')}>
+                        <ul>
+                          {workorder?.checklist.map(({ task, completed }: checklistProps, item) => (
+                            <TaskList completed={completed} key={item}>{task}</TaskList>
+                          ))}
+                        </ul>
+                      </Descriptions.Item>
                     </Descriptions>
                   </Card>
                 </Badge.Ribbon>

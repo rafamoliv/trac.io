@@ -12,3 +12,8 @@ export interface workordersProps {
 export interface usersProps {
   id: Key
 }
+
+export interface checklistProps {
+  task: string
+  completed: boolean
+}
