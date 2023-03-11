@@ -16,7 +16,7 @@ const Assets = () => {
   const [searchValue, setSearchValue] = useState('')
   const [openModal, setOpenModal] = useState(false)
   const { data: assetsData = [], isLoading } = useFetchAssetsQuery('')
-  const [takeAssetInfo, { currentData: assetByIdData }] = useLazyFetchAssetsByIdQuery()
+  const [takeAssetInfo, { currentData: assetByIdData, isFetching: isLoadingAssetById }] = useLazyFetchAssetsByIdQuery()
 
   const onSearch = (value: string) => setSearchValue(value)
 
@@ -102,18 +102,20 @@ const Assets = () => {
               title={assetByIdData?.name}
             >
               <ModalContent>
-                <Typography.Title level={5} style={{ textAlign: 'center' }}>{t('healthHistory')}</Typography.Title>
-                <Timeline
-                  mode="alternate"
-                  items={assetByIdData?.healthHistory?.map((asset) => ({
-                    color: takeAssetsByStatus[asset?.status].color,
-                    children: (
-                      <Typography.Text>
-                        {`${takeAssetsByStatus[asset?.status].text} ${dateFormat(asset?.timestamp)}`}
-                      </Typography.Text>
-                    )
-                  }))}
-                />
+                <Loading loading={isLoadingAssetById}>
+                  <Typography.Title level={5} style={{ textAlign: 'center' }}>{t('healthHistory')}</Typography.Title>
+                  <Timeline
+                    mode="alternate"
+                    items={assetByIdData?.healthHistory?.map((asset) => ({
+                      color: takeAssetsByStatus[asset?.status].color,
+                      children: (
+                        <Typography.Text>
+                          {`${takeAssetsByStatus[asset?.status].text} ${dateFormat(asset?.timestamp)}`}
+                        </Typography.Text>
+                      )
+                    }))}
+                  />
+                </Loading>
               </ModalContent>
             </Modal>
           )}
