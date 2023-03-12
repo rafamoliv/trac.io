@@ -37,7 +37,7 @@ const Assets = () => {
     )
   }
 
-  const takeAssetsByStatus = {
+  const takeAssetsByStatus: any = {
     inAlert: { color: 'yellow', text: t('status.inAlert') },
     inOperation: { color: 'green', text: t('status.inOperation') },
     inDowntime: { color: 'red', text: t('status.inDowntime') },
@@ -103,11 +103,11 @@ const Assets = () => {
               title={assetByIdData?.name}
             >
               <ModalContent>
-                <Loading loading={isLoadingAssetById}>
+                <Loading loading={isLoadingAssetById} size={'sm'}>
                   <Typography.Title level={5} style={{ textAlign: 'center' }}>{t('healthHistory')}</Typography.Title>
                   <Timeline
                     mode="alternate"
-                    items={assetByIdData?.healthHistory?.map((asset) => ({
+                    items={assetByIdData?.healthHistory?.map((asset: assetsDataProps) => ({
                       color: takeAssetsByStatus[asset?.status].color,
                       children: (
                         <Typography.Text>
