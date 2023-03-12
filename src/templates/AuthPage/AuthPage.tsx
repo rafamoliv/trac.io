@@ -1,8 +1,10 @@
-import { Card, Carousel, Layout, Avatar, Typography } from "antd"
+import { Card, Carousel, Layout, Avatar, Typography, QRCode } from "antd"
 import { UserOutlined } from '@ant-design/icons';
 import { Content, IntroductionContainerGrid, IntroductionContent, Grid, CarouselContent, CarouselProfile } from "./AuthPage.style"
 import { ChildrenProps } from "./types"
 import config from './AuthPage.config'
+import Lottie from 'react-lottie'
+import { AnimationDash } from "@/assets";
 
 /**
  * External pages template root
@@ -12,27 +14,30 @@ import config from './AuthPage.config'
 
 
 const AuthPage = ({ children }: ChildrenProps) => {
-
-  const contentStyle: React.CSSProperties = {
-    height: '128px',
-    color: '#fff',
-    lineHeight: '40px',
-    textAlign: 'center'
-  };
-
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Grid>
         <IntroductionContainerGrid>
           <IntroductionContent>
             <div>
-              Teste
+              <Lottie
+                isClickToPauseDisabled={true}
+                isPaused={false}
+                isStopped={false}
+                height={296}
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  animationData: AnimationDash
+                }}
+              />
+              <QRCode value="https://www.linkedin.com/in/rafamoliv/" />
             </div>
             <div>
               <Carousel autoplay>
                 {config.carrouselData.map((data, index) => (
                   <div key={index}>
-                    <Card style={{ backgroundColor: '#49565e', border: 0, height: '176px', opacity: '0.9' }}>
+                    <Card style={{ backgroundColor: '#49565e', border: 0, height: '148px', opacity: '0.9' }}>
                       <CarouselContent>
                         <Typography.Text italic style={{ fontSize: '14px' }}>{`"${data.description}"`}</Typography.Text>
                         <CarouselProfile>
