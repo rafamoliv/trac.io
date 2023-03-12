@@ -4,6 +4,7 @@ import { assetsEn, assetsPtBr } from './Assets'
 import { workordersEn, workordersPtBr } from './Workorders'
 import { companiesEn, companiesPtBr } from './Companies'
 import { usersEn, usersPtBr } from './Users'
+import { signInEn, signInPtBr } from './SignIn'
 
 const pagesEn = {
   ...dashboardEn,
@@ -11,7 +12,8 @@ const pagesEn = {
   ...assetsEn,
   ...workordersEn,
   ...companiesEn,
-  ...usersEn
+  ...usersEn,
+  ...signInEn
 }
 
 const pagesPtBr = {
@@ -20,7 +22,8 @@ const pagesPtBr = {
   ...assetsPtBr,
   ...workordersPtBr,
   ...companiesPtBr,
-  ...usersPtBr
+  ...usersPtBr,
+  ...signInPtBr
 }
 
 export { pagesEn, pagesPtBr }
