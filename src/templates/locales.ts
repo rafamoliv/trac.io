@@ -1,11 +1,14 @@
 import { systemPagesEn, systemPagesPtBr } from './SystemPage'
+import { authPagesEn, authPagesPtBr } from './AuthPage'
 
 const templatesEn = {
-  ...systemPagesEn
+  ...systemPagesEn,
+  ...authPagesEn
 }
 
 const templatesPtBr = {
-  ...systemPagesPtBr
+  ...systemPagesPtBr,
+  ...authPagesPtBr
 }
 
 export { templatesEn, templatesPtBr }
