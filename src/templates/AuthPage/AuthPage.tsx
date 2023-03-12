@@ -1,6 +1,6 @@
 import { Card, Carousel, Layout, Avatar, Typography, QRCode } from "antd"
 import { UserOutlined } from '@ant-design/icons';
-import { Content, IntroductionContainerGrid, IntroductionContent, Grid, CarouselContent, CarouselProfile } from "./AuthPage.style"
+import { Content, IntroductionContainerGrid, IntroductionContent, Grid, CarouselContent, CarouselProfile, Animation as StyledAnimation } from "./AuthPage.style"
 import { ChildrenProps } from "./types"
 import config from './AuthPage.config'
 import Lottie from 'react-lottie'
@@ -19,12 +19,12 @@ const AuthPage = ({ children }: ChildrenProps) => {
       <Grid>
         <IntroductionContainerGrid>
           <IntroductionContent>
-            <div>
+            <StyledAnimation>
               <Lottie
                 isClickToPauseDisabled={true}
                 isPaused={false}
                 isStopped={false}
-                height={296}
+                height={396}
                 options={{
                   loop: true,
                   autoplay: true,
@@ -32,12 +32,12 @@ const AuthPage = ({ children }: ChildrenProps) => {
                 }}
               />
               <QRCode value="https://www.linkedin.com/in/rafamoliv/" />
-            </div>
+            </StyledAnimation>
             <div>
               <Carousel autoplay>
                 {config.carrouselData.map((data, index) => (
                   <div key={index}>
-                    <Card style={{ backgroundColor: '#49565e', border: 0, height: '148px', opacity: '0.9' }}>
+                    <Card style={{ backgroundColor: '#49565e', border: 0, height: '176px', opacity: '0.9' }}>
                       <CarouselContent>
                         <Typography.Text italic style={{ fontSize: '14px' }}>{`"${data.description}"`}</Typography.Text>
                         <CarouselProfile>

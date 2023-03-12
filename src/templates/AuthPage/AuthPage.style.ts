@@ -19,10 +19,18 @@ export const IntroductionContent = styled.div`
   justify-content: space-between;
   height: 100%;
   padding: 32px;
+  max-width: 440px;
 
   @media (min-width: 992px) {
     display: flex;
   }
+`
+
+export const Animation = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
 `
 
 export const Content = styled.div`
