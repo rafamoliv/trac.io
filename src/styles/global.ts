@@ -34,5 +34,4 @@ export const GlobalStyles = createGlobalStyle`
       font: inherit;
     }
   `}
-
 `

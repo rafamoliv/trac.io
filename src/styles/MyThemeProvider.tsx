@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyles } from './global'
@@ -11,8 +10,4 @@ export const MyThemeProvider = ({ children }) => {
       {children}
     </ThemeProvider>
   )
-}
-
-MyThemeProvider.propTypes = {
-  children: PropTypes.node.isRequired
 }
