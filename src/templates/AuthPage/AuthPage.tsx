@@ -23,7 +23,7 @@ const AuthPage = ({ children }: ChildrenProps) => {
         <IntroductionContainerGrid>
           <IntroductionContent>
             <Typography.Title level={3} style={{ color: '#fff' }}>trac.io</Typography.Title>
-            <Typography.Text style={{ color: '#fff', fontSize: '20px', fontWeight: '600' }}>{t('introduction')}</Typography.Text>
+            <Typography.Paragraph style={{ color: '#fff', fontSize: '20px', fontWeight: '600' }}>{t('introduction')}</Typography.Paragraph>
             <Lottie
               isClickToPauseDisabled={true}
               isPaused={false}
