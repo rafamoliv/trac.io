@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { pxToRem } from '@/utils'
 
 export const Container = styled.div``
 
@@ -7,17 +8,21 @@ export const Container = styled.div``
  */
 
 export const CardContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.spacing[2]};
+  `}
 `
 
 export const CardDetails = styled.div``
 
 export const CardSpecifications = styled.div`
-  align-items: center;
-  display: flex;
-  gap: 8px;
+  ${({ theme }) => css`
+    align-items: center;
+    display: flex;
+    gap: ${theme.spacing[1]};
+  `}
 `
 
 /**
@@ -34,6 +39,6 @@ export const EmptyContent = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 192px;
+  height: ${pxToRem(192)};
   width: 100%;
 `

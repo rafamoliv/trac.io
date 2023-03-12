@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { pxToRem } from '@/utils'
 import { Layout, Typography } from 'antd'
 
 /**
@@ -6,12 +7,14 @@ import { Layout, Typography } from 'antd'
  */
 
 export const Header = styled(Layout.Header)`
-  align-items: center;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 16px;
+  ${({ theme }) => css`
+    align-items: center;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 ${theme.spacing[2]};
+  `}
 
   @media (min-width: 576px) {
     flex-direction: row;
@@ -21,16 +24,18 @@ export const Header = styled(Layout.Header)`
 export const MenuContent = styled.nav`
   display: flex;
   flex-direction: column;
-  height: calc(100% - 80px);
+  height: calc(100% - ${pxToRem(80)});
   justify-content: space-between;
 `
 
 export const MenuTop = styled.div``
 
 export const Flags = styled.div`
-  display: flex;
-  gap: 4px;
-  justify-content: center;
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    gap: ${theme.spacing[0.5]};
+  `}
 `
 
 /**
@@ -38,11 +43,13 @@ export const Flags = styled.div`
  */
 
 export const ProfileContent = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 4px;
-  padding: 0 16px 0 16px;
+  ${({ theme }) => css`
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: ${theme.spacing[0.5]};
+    padding: 0 ${theme.spacing[2]} 0 ${theme.spacing[2]};
+  `}
 `
 
 export const ProfileName = styled(Typography.Paragraph)`
@@ -58,9 +65,11 @@ export const ProfileName = styled(Typography.Paragraph)`
  */
 
 export const LogoFigure = styled.figure`
-  height: 32px;
-  margin: 16px;
-  text-align: center;
+  ${({ theme }) => css`
+    height: ${theme.spacing[4]};
+    margin: ${theme.spacing[2]};
+    text-align: center;
+  `}
 `
 
 /**
@@ -68,5 +77,7 @@ export const LogoFigure = styled.figure`
  */
 
 export const Section = styled.section`
-  padding: 16px;
+  ${({ theme }) => css`
+    padding: ${theme.spacing[2]};
+  `}
 `
