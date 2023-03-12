@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next'
 import { SystemPage } from '@/templates/SystemPage'
 import { Card, Loading } from '@/components'
-import { Avatar, Divider, Table } from 'antd';
+import { Avatar, Badge, Divider, Table } from 'antd';
 import { useFetchUsersQuery } from '@/services/api';
 import { faker } from '@faker-js/faker';
 import { UserOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
-import { tableUsersDataType } from './type';
+import { tableUsersDataType, usersProps } from './type';
+import { Key } from 'react';
 
 const Users = () => {
   const { t } = useTranslation('pgUsers')
@@ -38,9 +39,9 @@ const Users = () => {
   ]
 
   const takeUsers = () => {
-    return usersData.map((user, index) => ({
+    return usersData.map((user: usersProps, index: Key) => ({
       key: index,
-      avatar: <Avatar shape="square" icon={<UserOutlined />} src={faker.image.avatar()} size={32} />,
+      avatar: <Badge dot status='success'><Avatar shape="square" icon={<UserOutlined />} src={faker.image.avatar()} size={32} /></Badge>,
       name: user?.name,
       nickname: faker.internet.userName(user?.name),
       email: user?.email

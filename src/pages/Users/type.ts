@@ -9,3 +9,8 @@ export interface tableUsersDataType {
   nickname: string
   responsive?: Breakpoint[]
 }
+
+export interface usersProps {
+  name: string
+  email: string
+}
