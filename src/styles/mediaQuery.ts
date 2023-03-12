@@ -19,11 +19,3 @@ export const minDevice = {
   /** min-width: 2000px */
   desktopHg: `(min-width: ${theme.breakpoints.hg})`
 }
-
-/**
- * Mediaquery values in max-width format
- */
-export const maxDevice = {
-  /** max-width: 1199px */
-  desktopLg: `(max-width: 74.938rem)`
-}
