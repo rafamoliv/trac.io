@@ -1,4 +1,18 @@
 /**
+ * Convert px to rem unit
+ * @param valuePx Value in px
+ * @param base Base value for calcularion
+ * @returns Value converted to rem
+ *
+ * @example
+ * pxToRem(75)
+ */
+
+export const pxToRem = (valuePx: number, base = 16): string => {
+  return `${valuePx / base}rem`
+}
+
+/**
  * Util to formate date to locale string
  *
  * @param {Date} DateToFormat
