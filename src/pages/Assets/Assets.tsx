@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faPlugCircleBolt, faTemperatureHigh, faRotate } from '@fortawesome/free-solid-svg-icons';
 import { dateFormat } from '@/utils';
+import { theme } from '@/styles';
 
 const Assets = () => {
   const { t } = useTranslation('pgAssets')
@@ -84,7 +85,7 @@ const Assets = () => {
                       </CardDetails>
                       <CardDetails>
                         <Typography.Title level={5}>{t('healthscore')}</Typography.Title>
-                        <Progress percent={asset?.healthscore} strokeColor={{ '0%': '#F0F5F9', '100%': '#C9D6DF' }} />
+                        <Progress percent={asset?.healthscore} strokeColor={{ '0%': theme.colors.primary.light, '100%': theme.colors.primary.medium }} />
                       </CardDetails>
                     </CardContent>
                   </Card>

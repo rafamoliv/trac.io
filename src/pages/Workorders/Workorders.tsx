@@ -14,12 +14,12 @@ const Workorders = () => {
   const { data: workordersData = [], isLoading: isLoadingWorkedData } = useFetchWorkordersQuery('')
   const { data: usersData = [], isLoading: isLoadingUserData } = useFetchUsersQuery('')
 
-  const takeWorkordersByStatus = {
+  const takeWorkordersByStatus: any = {
     'in progress': { status: 'processing', text: t('status.inProgress') },
     completed: { status: 'success', text: t('status.completed') }
   }
 
-  const takeWorkordersByPriority = {
+  const takeWorkordersByPriority: any = {
     high: { color: 'red', text: t('priorities.high') }
   }
 

@@ -9,8 +9,10 @@ import { ColumnChart } from './components/ColumnChart';
 import { useFetchAssetsQuery, useFetchWorkordersQuery } from '@/services/api';
 import { MapChart } from './components/MapChart';
 import { RadialBarChart } from './components/RadialBarChart';
-import { tableRecentEmailsDataType } from './types';
+import { tableRecentEmailsDataType, workorderProps } from './types';
 import { faker } from '@faker-js/faker';
+import { theme } from '@/styles';
+import { Key } from 'react';
 
 const Home = () => {
   const { t } = useTranslation('pgDashboard')
@@ -79,7 +81,7 @@ const Home = () => {
       <SystemPage.Header title={t('title')}>
         <ContentHeader>
           <Input.Search disabled placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />
-          <Avatar shape="square" style={{ backgroundColor: '#fff' }} icon={<SlidersOutlined style={{ color: '#d6d6d6' }} />} />
+          <Avatar shape="square" style={{ backgroundColor: theme.colors.white }} icon={<SlidersOutlined style={{ color: theme.colors.primary.lightest }} />} />
         </ContentHeader>
       </SystemPage.Header>
       <SystemPage.Section>
@@ -101,7 +103,7 @@ const Home = () => {
           </Col>
           <Col className="gutter-row" sm={24}>
             <Card title={t('cards.workorders')}>
-              {takeInProgressWorkorders().map((workorder, index) => (
+              {takeInProgressWorkorders().map((workorder: workorderProps, index: Key) => (
                 <div key={index}>
                   <Divider orientation="left">{workorder?.title}</Divider>
                   <Typography.Text>{workorder?.description}</Typography.Text>

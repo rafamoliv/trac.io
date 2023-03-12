@@ -7,6 +7,7 @@ import { privateURL } from '@/routes/urls';
 import { Image, Input, Form, Button, Card } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { IconTracIO } from '@/assets'
+import { theme } from '@/styles';
 
 const Settings = () => {
   const { t } = useTranslation('pgSignIn')
@@ -24,8 +25,8 @@ const Settings = () => {
 
   return (
     <AuthPage>
-      <Card style={{ padding: '24px' }}>
-        <Image preview={false} src={IconTracIO} style={{ marginBottom: '40px' }} />
+      <Card style={{ padding: theme.spacing[3] }}>
+        <Image preview={false} src={IconTracIO} style={{ marginBottom: theme.spacing[5] }} />
         <Form
           name="signin"
           initialValues={{ remember: true }}
