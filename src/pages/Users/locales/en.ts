@@ -1,6 +1,10 @@
 const usersEn = {
   pgUsers: {
-    title: 'Users'
+    title: 'Users',
+    table: {
+      title: 'Active users',
+      head: ['Name', 'Nickname', 'Email']
+    }
   }
 }
 

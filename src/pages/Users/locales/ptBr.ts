@@ -1,6 +1,10 @@
 const usersPtBr = {
   pgUsers: {
-    title: 'Usuários'
+    title: 'Usuários',
+    table: {
+      title: 'Usuários ativos',
+      head: ['Nome', 'Apelido', 'Email']
+    }
   }
 }
 
