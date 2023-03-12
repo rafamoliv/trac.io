@@ -135,17 +135,19 @@ export const theme = {
     100: 1
   },
   colors: {
+    /** #111315 */
+    black: colors.black,
+    /** #ffffff */
+    white: colors.white,
     primary: {
-      /** #EFE6FF */
-      lightest: colors.purple[100],
-      /** #B78AFF */
-      light: colors.purple[80],
-      /** #6E1DF1 */
-      medium: colors.purple[60],
-      /** #4A00C2 */
-      dark: colors.purple[40],
-      /** #2D0075 */
-      darkest: colors.purple[20]
+      /** #F0F5F9 */
+      light: '#F0F5F9',
+      /** #C9D6DF */
+      medium: '#C9D6DF',
+      /** #52616B */
+      dark: '#52616B',
+      /** #49565e */
+      darkest: '#49565E'
     }
   }
 }
