@@ -4,6 +4,7 @@ import highchartsAccessibility from "highcharts/modules/accessibility";
 import highchartsMore from "highcharts/highcharts-more";
 import { useTranslation } from 'react-i18next'
 import { chartProps, chartRadialDataProps } from '../types';
+import { theme } from '@/styles';
 
 highchartsMore(Highcharts);
 highchartsAccessibility(Highcharts);
@@ -38,7 +39,7 @@ export const RadialBarChart = ({ data }: chartProps) => {
                 step: 1,
                 y: 3,
                 style: {
-                    fontSize: '13px'
+                    fontSize: theme.font.sizes[12]
                 }
             },
             lineWidth: 0,

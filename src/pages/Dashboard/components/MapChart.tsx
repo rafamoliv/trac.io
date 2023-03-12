@@ -4,6 +4,7 @@ import highchartsAccessibility from "highcharts/modules/accessibility"
 import mapBrazil from '@highcharts/map-collection/countries/br/br-all.topo.json'
 import { useTranslation } from 'react-i18next'
 import config from '../Dashboard.config'
+import { theme } from '@/styles'
 
 highchartsAccessibility(Highcharts);
 
@@ -29,15 +30,15 @@ export const MapChart = (props: HighchartsReact.Props) => {
             dataClasses: [{
                 from: 0,
                 to: 9,
-                color: "#F0F5F9"
+                color: theme.colors.primary.light
             }, {
                 from: 10,
                 to: 19,
-                color: "#C9D6DF"
+                color: theme.colors.primary.medium
             }, {
                 from: 20,
                 to: 30,
-                color: "#52616B"
+                color: theme.colors.primary.dark
             }]
         },
         series: [{
@@ -47,7 +48,7 @@ export const MapChart = (props: HighchartsReact.Props) => {
             data: config.mapChartData as (number | Highcharts.SeriesMapDataOptions | [string, number])[],
             states: {
                 hover: {
-                    color: '#d3d3d3'
+                    color: theme.colors.primary.lightest
                 }
             },
             dataLabels: {
