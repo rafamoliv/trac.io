@@ -37,7 +37,7 @@ const Router = () => {
 
   let routes = useRoutes([
     {
-      element: <ProtectedRoute user={'user'} />,
+      element: <ProtectedRoute user={user} />,
       children: [
         {
           path: privateURL.DASHBOARD,
