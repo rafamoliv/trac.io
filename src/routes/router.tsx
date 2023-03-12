@@ -41,27 +41,27 @@ const Router = () => {
       children: [
         {
           path: privateURL.DASHBOARD,
-          element: <Suspense fallback={<Loading size='bg' />}><Dashboard /></Suspense>
+          element: <Suspense fallback={<Loading size='md' />}><Dashboard /></Suspense>
         },
         {
           path: privateURL.SETTINGS,
-          element: <Suspense fallback={<Loading size='bg' />}><Settings /></Suspense>
+          element: <Suspense fallback={<Loading size='md' />}><Settings /></Suspense>
         },
         {
           path: privateURL.ASSETS,
-          element: <Suspense fallback={<Loading size='bg' />}><Assets /></Suspense>
+          element: <Suspense fallback={<Loading size='md' />}><Assets /></Suspense>
         },
         {
           path: privateURL.WORKORDERS,
-          element: <Suspense fallback={<Loading size='bg' />}><Workorders /></Suspense>
+          element: <Suspense fallback={<Loading size='md' />}><Workorders /></Suspense>
         },
         {
           path: privateURL.COMPANIES,
-          element: <Suspense fallback={<Loading size='bg' />}><Companies /></Suspense>
+          element: <Suspense fallback={<Loading size='md' />}><Companies /></Suspense>
         },
         {
           path: privateURL.USERS,
-          element: <Suspense fallback={<Loading size='bg' />}><Users /></Suspense>
+          element: <Suspense fallback={<Loading size='md' />}><Users /></Suspense>
         },
         {
           path: '*',
@@ -71,7 +71,7 @@ const Router = () => {
     },
     {
       path: publicURL.SIGNIN,
-      element: <Suspense fallback={<Loading size='bg' />}><SignIn /></Suspense>
+      element: <Suspense fallback={<Loading size='md' />}><SignIn /></Suspense>
     },
     {
       path: '*',
