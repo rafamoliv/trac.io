@@ -3,66 +3,127 @@ import { colors } from './colors'
 export const theme = {
   font: {
     family: 'Roboto, Arial',
+    /** 300 */
     light: 300,
+    /** 400 */
     regular: 400,
+    /** 500 */
     medium: 500,
+    /** 600 */
     semiBold: 600,
+    /** 700 */
     bold: 700,
     sizes: {
-      xxs: '0.625rem',
-      xs: '0.750rem',
-      sm: '0.875rem',
-      md: '1rem',
-      lg: '1.250rem',
-      xl: '1.5rem',
-      xxl: '2rem',
-      xxxl: '2.5rem',
-      hg: '3.5rem'
+      /** 10px */
+      10: '0.625rem',
+      /** 12px */
+      12: '0.750rem',
+      /** 14px */
+      14: '0.875rem',
+      /** 16px */
+      base: '1rem',
+      /** 20px */
+      20: '1.250rem',
+      /** 22px */
+      22: '1.375rem',
+      /** 24px */
+      24: '1.5rem',
+      /** 32px */
+      32: '2rem',
+      /** 40px */
+      40: '2.5rem',
+      /** 48px */
+      48: '3.5rem'
     }
   },
+  /** Breakpoints to media query */
   breakpoints: {
+    /** 320px */
     tn: '20rem',
+    /** 576px */
     xs: '36rem',
+    /** 768px */
     sm: '48rem',
+    /** 992px */
     md: '62rem',
+    /** 1200px */
     lg: '75rem',
+    /** 1400px */
     xl: '87.5rem',
+    /** 2000px */
     hg: '125rem'
   },
   spacing: {
+    /** 1px */
     px: '0.063rem',
+    /** 0 */
     0: '0',
+    /** 2px */
     0.25: '0.125rem',
+    /** 4px */
     0.5: '0.250rem',
+    /** 8px */
     1: '0.5rem',
+    /** 16px */
     2: '1rem',
-    3: '1.5em',
+    /** 24px */
+    3: '1.5rem',
+    /** 32px */
     4: '2rem',
+    /** 40px */
     5: '2.5rem',
+    /** 48px */
     6: '3rem',
+    /** 56px */
     7: '3.5rem',
+    /** 64px */
     8: '4rem',
+    /** 72px */
     9: '4.5rem',
+    /** 80px */
     10: '5rem',
+    /** 88px */
     11: '5.5rem',
+    /** 96px */
     12: '6rem',
+    /** 104px */
     13: '6.5rem',
+    /** 112px */
     14: '7rem'
   },
   border: {
+    /** 1px */
     px: '1px',
+    /** 0 */
     0: 0,
+    /** 2px */
     0.25: '0.125rem',
+    /** 4px */
     0.5: '0.250rem',
+    /** 8px */
     1: '0.5rem',
     radius: {
+      /** 1px */
       px: '1px',
+      /** 0 */
       0: 0,
+      /** 4px */
       0.5: '0.250rem',
+      /** 8px */
       1: '0.5rem',
+      /** 16px */
+      2: '1rem',
+      /** 24px */
       3: '1.5em',
-      circle: '50%'
+      circle: '9999px'
     }
+  },
+  boxShadow: {
+    0: 'none',
+    /** 0 2px 4px 0 */
+    1: `0 0.125rem 0.250rem 0 rgba(58, 70, 79, 0.24)`,
+    /** 0 6px 6px 0 */
+    2: `0 0.375rem 0.375rem 0 rgba(0, 0, 0, .25)`
   },
   opacity: {
     0: 0,
@@ -74,65 +135,17 @@ export const theme = {
     100: 1
   },
   colors: {
-    brand: {
-      light: colors.purple[70],
-      medium: colors.purple[50],
-      dark: colors.purple[10],
-      darkest: colors.purple[0]
-    },
     primary: {
+      /** #EFE6FF */
       lightest: colors.purple[100],
+      /** #B78AFF */
       light: colors.purple[80],
+      /** #6E1DF1 */
       medium: colors.purple[60],
+      /** #4A00C2 */
       dark: colors.purple[40],
+      /** #2D0075 */
       darkest: colors.purple[20]
-    },
-    secondary: {
-      light: colors.ocean[70],
-      medium: colors.ocean[50],
-      dark: colors.ocean[30]
-    },
-    success: {
-      light: colors.green[70],
-      medium: colors.green[40],
-      dark: colors.green[20]
-    },
-    warning: {
-      light: colors.yellow[70],
-      medium: colors.yellow[50],
-      dark: colors.yellow[30]
-    },
-    error: {
-      light: colors.orange[70],
-      medium: colors.orange[50],
-      dark: colors.orange[30]
-    },
-    critical: {
-      light: colors.red[70],
-      medium: colors.red[50],
-      dark: colors.red[40]
-    },
-    info: {
-      light: colors.blue[80],
-      medium: colors.blue[50],
-      dark: colors.blue[30]
-    },
-    random: {
-      light: colors.blue[80],
-      medium: colors.blue[50],
-      dark: colors.blue[30]
-    },
-    black: colors.black,
-    white: colors.white,
-    dark: {
-      hard: colors.gray[10],
-      medium: colors.gray[30],
-      low: colors.gray[50]
-    },
-    light: {
-      hard: colors.gray[70],
-      medium: colors.gray[80],
-      low: colors.gray[90]
     }
   }
 }
