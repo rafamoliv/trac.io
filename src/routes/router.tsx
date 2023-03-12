@@ -1,4 +1,3 @@
-import i18next from 'i18next'
 import { useEffect, useContext, lazy, Suspense, ReactElement } from 'react'
 import { Navigate, Outlet, useNavigate, useRoutes } from 'react-router-dom'
 
@@ -38,7 +37,7 @@ const Router = () => {
 
   let routes = useRoutes([
     {
-      element: <ProtectedRoute user={user} />,
+      element: <ProtectedRoute user={'user'} />,
       children: [
         {
           path: privateURL.DASHBOARD,
