@@ -3,9 +3,11 @@ import { minDevice } from '@/styles/mediaQuery'
 import { pxToRem } from '@/utils'
 
 export const Grid = styled.div`
-  background-color: #f0f5f9;
-  display: flex;
-  min-height: 100vh;
+  ${({ theme }) => css`
+    background-color: ${theme.colors.primary.light};
+    display: flex;
+    min-height: 100vh;
+  `}
 `
 
 export const IntroductionContainerGrid = styled.div`
@@ -16,7 +18,7 @@ export const IntroductionContainerGrid = styled.div`
 
 export const IntroductionContent = styled.div`
   ${({ theme }) => css`
-    background-color: #52616b;
+    background-color: ${theme.colors.primary.dark};
     border-radius: ${theme.spacing[2]};
     display: none;
     flex-direction: column;
