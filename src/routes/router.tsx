@@ -19,7 +19,6 @@ const Workorders = lazy(() => import('@/pages/Workorders'))
 const Companies = lazy(() => import('@/pages/Companies'))
 const Users = lazy(() => import('@/pages/Users'))
 
-// eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({ user }: ProtectedRouteProps): ReactElement => {
   if (user) {
     return <Outlet />
