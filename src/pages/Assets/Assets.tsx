@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { SystemPage } from '@/templates/SystemPage'
 import { Loading } from '@/components'
-import { Badge, Card, Col, Row, Image, Input, Modal, Typography, Progress, Timeline, Button } from 'antd';
+import { Badge, Card, Col, Row, Image, Input, Modal, Typography, Progress, Timeline, Button, Empty } from 'antd';
 import { useFetchAssetsQuery, useLazyFetchAssetsByIdQuery } from '@/services/api';
 import { assetsDataProps } from './types';
 import { Key, useState } from 'react';
-import { CardContent, CardDetails, CardSpecifications, ModalContent } from './Assets.styles';
+import { CardContent, CardDetails, CardSpecifications, EmptyContent, ModalContent } from './Assets.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faPlugCircleBolt, faTemperatureHigh, faRotate } from '@fortawesome/free-solid-svg-icons';
@@ -91,6 +91,7 @@ const Assets = () => {
                 </Badge.Ribbon>
               </Col>
             ))}
+            {!takeFilteredAssets().length && <EmptyContent><Empty description={t('empty')} /></EmptyContent>}
           </Loading>
 
           {openModal && (

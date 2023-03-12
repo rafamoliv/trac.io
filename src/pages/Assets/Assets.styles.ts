@@ -25,3 +25,15 @@ export const CardSpecifications = styled.div`
  */
 
 export const ModalContent = styled.div``
+
+/**
+ * Empty state
+ */
+
+export const EmptyContent = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 192px;
+  width: 100%;
+`

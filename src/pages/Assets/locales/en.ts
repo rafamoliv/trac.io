@@ -11,7 +11,8 @@ const assetsEn = {
       inDowntime: 'In downtime',
       unplannedStop: 'Unplanned stop',
       plannedStop: 'Planned stop'
-    }
+    },
+    empty: 'No assets found'
   }
 }
 

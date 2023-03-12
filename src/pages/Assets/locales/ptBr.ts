@@ -11,7 +11,8 @@ const assetsPtBr = {
       inDowntime: 'Em intatividade',
       unplannedStop: 'Parada não planejada',
       plannedStop: 'Parada planejada'
-    }
+    },
+    empty: 'Não foram encontrados ativos'
   }
 }
 
