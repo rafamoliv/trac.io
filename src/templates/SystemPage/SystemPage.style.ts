@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { minDevice } from '@/styles/mediaQuery'
 import { pxToRem } from '@/utils'
 import { Layout, Typography } from 'antd'
 
@@ -16,7 +17,7 @@ export const Header = styled(Layout.Header)`
     padding: 0 ${theme.spacing[2]};
   `}
 
-  @media (min-width: 576px) {
+  @media ${minDevice.mobileXs} {
     flex-direction: row;
   }
 `

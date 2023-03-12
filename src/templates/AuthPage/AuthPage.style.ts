@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { minDevice } from '@/styles/mediaQuery'
 import { pxToRem } from '@/utils'
 
 export const Grid = styled.div`
@@ -25,7 +26,7 @@ export const IntroductionContent = styled.div`
     max-width: ${pxToRem(440)};
   `}
 
-  @media (min-width: 992px) {
+  @media ${minDevice.tablet} {
     display: flex;
   }
 `
