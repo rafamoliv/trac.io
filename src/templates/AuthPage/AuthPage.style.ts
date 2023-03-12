@@ -25,13 +25,6 @@ export const IntroductionContent = styled.div`
   }
 `
 
-export const Animation = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
-`
-
 export const ChildrenContent = styled.div`
   align-items: center;
   display: flex;

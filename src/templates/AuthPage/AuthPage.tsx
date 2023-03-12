@@ -1,8 +1,9 @@
 import { Card, Carousel, Layout, Avatar, Typography, QRCode } from "antd"
 import { UserOutlined } from '@ant-design/icons';
-import { ChildrenContent, IntroductionContainerGrid, IntroductionContent, Grid, CarouselContent, CarouselProfile, Animation as StyledAnimation } from "./AuthPage.style"
+import { ChildrenContent, IntroductionContainerGrid, IntroductionContent, Grid, CarouselContent, CarouselProfile } from "./AuthPage.style"
 import { ChildrenProps } from "./types"
 import config from './AuthPage.config'
+import { useTranslation } from "react-i18next";
 import Lottie from 'react-lottie'
 import { AnimationDash } from "@/assets";
 
@@ -14,25 +15,26 @@ import { AnimationDash } from "@/assets";
 
 
 const AuthPage = ({ children }: ChildrenProps) => {
+  const { t } = useTranslation('authPageText')
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Grid>
         <IntroductionContainerGrid>
           <IntroductionContent>
-            <StyledAnimation>
-              <Lottie
-                isClickToPauseDisabled={true}
-                isPaused={false}
-                isStopped={false}
-                height={396}
-                options={{
-                  loop: true,
-                  autoplay: true,
-                  animationData: AnimationDash
-                }}
-              />
-              <QRCode value="https://www.linkedin.com/in/rafamoliv/" />
-            </StyledAnimation>
+            <Typography.Title level={3} style={{ color: '#fff' }}>trac.io</Typography.Title>
+            <Typography.Text style={{ color: '#fff', fontSize: '20px', fontWeight: '600' }}>{t('introduction')}</Typography.Text>
+            <Lottie
+              isClickToPauseDisabled={true}
+              isPaused={false}
+              isStopped={false}
+              height={396}
+              options={{
+                loop: true,
+                autoplay: true,
+                animationData: AnimationDash
+              }}
+            />
             <div>
               <Carousel autoplay>
                 {config.carrouselData.map((data, index) => (
