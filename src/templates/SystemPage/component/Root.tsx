@@ -47,7 +47,7 @@ export const Root = ({ children }: ChildrenProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const { handleSignIn, handleSignOut, user } = useContext(AppContext)
 
-  const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, UNITS, USERS, SETTINGS } = privateURL
+  const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, USERS, SETTINGS } = privateURL
 
   const menuItemsText = {
     dashboard: t('menu.dashboard'),
@@ -103,15 +103,14 @@ export const Root = ({ children }: ChildrenProps) => {
         <MenuContent>
           <MenuTop>
             <Menu defaultSelectedKeys={[pathname]} mode="inline" onClick={(info) => navigate(info.key)} items={items} />
-            <Menu mode="inline" onClick={() => handleSignOut()} items={signOutMenuItem} />
+            <Menu mode="inline" onClick={() => handleSignOut?.()} items={signOutMenuItem} />
             <Flags>
               <Avatar alt={t('flags.brazil')} onClick={() => i18n.changeLanguage('ptbr')} shape="square" size="small" src={config.flags.brazil} style={{ cursor: 'pointer' }} />
               <Avatar alt={t('flags.us')} onClick={() => i18n.changeLanguage('en')} shape="square" size="small" src={config.flags.us} style={{ cursor: 'pointer' }} />
             </Flags>
-            <button onClick={() => handleSignIn('teste@aisjidsa.com')}>SignIN</button>
           </MenuTop>
           <ProfileContent>
-            <Avatar alt={user?.name} icon={<UserOutlined />} shape="square" size="large" src={user?.avatar} />
+            <Avatar alt={user?.name as string} icon={<UserOutlined />} shape="square" size="large" src={user?.avatar} />
             <ProfileName collapsed={collapsed ? 1 : 0} style={{ marginBottom: 0, marginLeft: 8 }}>{user?.name}</ProfileName>
           </ProfileContent>
         </MenuContent>
