@@ -1,6 +1,7 @@
-import { LoadingOutlined } from '@ant-design/icons'
 import { ReactNode } from 'react'
 import { LoadingContent } from './Loading.style'
+import Lottie from 'react-lottie'
+import { AnimationLoader } from '@/assets'
 
 /**
  * Loading component for loader status
@@ -13,20 +14,20 @@ interface LoadingProps {
 }
 
 export const Loading = ({ children, loading = true, size = 'md' }: LoadingProps) => {
-  var iconSize = '24px'
+  var dimension = 32
 
   switch (size) {
     case 'sm':
-      iconSize = '16px'
+      dimension = 32
       break;
     case 'md':
-      iconSize = '24px'
+      dimension = 68
       break;
     case 'bg':
-      iconSize = '32px'
+      dimension = 125
       break;
     default:
-      iconSize = '24px'
+      dimension = 32
       break;
   }
 
@@ -34,7 +35,18 @@ export const Loading = ({ children, loading = true, size = 'md' }: LoadingProps)
     {
       loading ?
         <LoadingContent>
-          <LoadingOutlined style={{ fontSize: iconSize }} />
+          <Lottie
+            height={dimension}
+            isClickToPauseDisabled={true}
+            isPaused={false}
+            isStopped={false}
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData: AnimationLoader
+            }}
+            width={dimension}
+          />
         </LoadingContent> :
         children
     }

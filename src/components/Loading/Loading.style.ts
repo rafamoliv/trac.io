@@ -9,4 +9,5 @@ export const LoadingContent = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+  height: 100%;
 `
