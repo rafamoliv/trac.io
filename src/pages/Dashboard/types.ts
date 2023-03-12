@@ -25,3 +25,8 @@ export interface chartColumnDataProps extends chartProps {
   name: string
   healthscore: string
 }
+
+export interface workorderProps {
+  title: string
+  description: string
+}
