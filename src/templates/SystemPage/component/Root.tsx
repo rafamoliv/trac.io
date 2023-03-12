@@ -45,7 +45,7 @@ export const Root = ({ children }: ChildrenProps) => {
   const { pathname } = useLocation()
   const { t, i18n } = useTranslation('systemPagesText')
   const [collapsed, setCollapsed] = useState(false);
-  const { handleSignIn, handleSignOut, user } = useContext(AppContext)
+  const { handleSignOut, user } = useContext(AppContext)
 
   const { DASHBOARD, ASSETS, WORKORDERS, COMPANIES, USERS, SETTINGS } = privateURL
 
