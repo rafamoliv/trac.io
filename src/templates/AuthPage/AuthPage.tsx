@@ -1,6 +1,6 @@
 import { Card, Carousel, Layout, Avatar, Typography, QRCode } from "antd"
 import { UserOutlined } from '@ant-design/icons';
-import { Content, IntroductionContainerGrid, IntroductionContent, Grid, CarouselContent, CarouselProfile, Animation as StyledAnimation } from "./AuthPage.style"
+import { ChildrenContent, IntroductionContainerGrid, IntroductionContent, Grid, CarouselContent, CarouselProfile, Animation as StyledAnimation } from "./AuthPage.style"
 import { ChildrenProps } from "./types"
 import config from './AuthPage.config'
 import Lottie from 'react-lottie'
@@ -55,7 +55,7 @@ const AuthPage = ({ children }: ChildrenProps) => {
             </div>
           </IntroductionContent>
         </IntroductionContainerGrid>
-        <Content>{children}</Content>
+        <ChildrenContent>{children}</ChildrenContent>
       </Grid>
     </Layout>
   )

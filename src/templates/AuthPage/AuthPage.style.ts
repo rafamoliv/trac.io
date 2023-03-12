@@ -2,12 +2,11 @@ import styled from 'styled-components'
 
 export const Grid = styled.div`
   background-color: #f0f5f9;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  min-height: 100vh;
 `
 
 export const IntroductionContainerGrid = styled.div`
-  grid-column: 1/3;
   padding: 16px;
 `
 
@@ -33,13 +32,13 @@ export const Animation = styled.div`
   margin-bottom: 40px;
 `
 
-export const Content = styled.div`
+export const ChildrenContent = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 48px 16px;
+  justify-content: center;
+  padding: 40px;
+  width: 100%;
 `
 
 export const CarouselContent = styled.div`
