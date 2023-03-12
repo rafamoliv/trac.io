@@ -9,7 +9,11 @@ import { ChildrenProps } from "./types"
 
 const AuthPage = ({ children }: ChildrenProps) => {
 
-  return 'chil'
+  return (
+    <div>
+      {children}
+    </div>
+  )
 }
 
 export default AuthPage
