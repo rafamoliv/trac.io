@@ -140,6 +140,8 @@ export const theme = {
     /** #ffffff */
     white: colors.white,
     primary: {
+      /** #D3D3D3 */
+      lightest: '#D3D3D3',
       /** #F0F5F9 */
       light: '#F0F5F9',
       /** #C9D6DF */
