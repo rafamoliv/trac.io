@@ -78,7 +78,7 @@ const Home = () => {
     <SystemPage.Root>
       <SystemPage.Header title={t('title')}>
         <ContentHeader>
-          <Input.Search placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />
+          <Input.Search disabled placeholder="input search text" allowClear onSearch={onSearch} style={{ width: 200 }} />
           <Avatar shape="square" style={{ backgroundColor: '#fff' }} icon={<SlidersOutlined style={{ color: '#d6d6d6' }} />} />
         </ContentHeader>
       </SystemPage.Header>
