@@ -1,6 +1,5 @@
 const { resolve } = require('path')
 const { loadConfigFromFile, mergeConfig, loadEnv } = require('vite')
-//const svgr = require('vite-plugin-svgr')
 
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
@@ -24,7 +23,7 @@ module.exports = {
     )
     return mergeConfig(config, {
       ...userConfig,
-      ///plugins: [svgr()],
+      plugins: [],
       build: {
         minify: false,
         sourcemap: false
