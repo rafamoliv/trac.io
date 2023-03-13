@@ -15,7 +15,9 @@
     "test": "vitest",
     "test:coveragw": "vitest run --coverage",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "build-storybook": "build-storybook",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -85,6 +87,7 @@
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.4",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.0",
     "jest-styled-components": "^7.1.1",
     "jsdom": "^20.0.0",
@@ -94,6 +97,7 @@
     "vite": "^3.1.0",
     "vitest": "^0.23.4"
   },
+  "homepage": "http://rafamoliv.github.io/trac.io",
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "1.0.1",
     "react-i18next": ">=11.16.4"
