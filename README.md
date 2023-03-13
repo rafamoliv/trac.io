@@ -1,5 +1,5 @@
 <center>
-  <img src=".github/assets/trac.io.small.svg" alt="trac.io logo" width="296" />
+  <img src=".github/assets/trac.io-gray.svg" alt="trac.io logo" width="296" />
 </center>
 <br /><br />
 
@@ -52,15 +52,15 @@ A tech industry company created for study and practice purposes.
 
 ### How to install and run project
 
-yarn && yarn dev
+`yarn && yarn dev`
 
 ### How to run storybook
 
-yarn storybook
+`yarn storybook`
 
 ### How to run tests
 
-yarn test
+`yarn test`
 
 ### VsCode
 
