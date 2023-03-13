@@ -11,7 +11,7 @@ const props = {
 }
 
 describe('<Card />', () => {
-    describe('Component Render', () => {
+    describe('Component Snapshot', () => {
         it('render element', () => {
             const { container } = render(<Card {...props} />)
             expect(container.firstChild).toMatchSnapshot()

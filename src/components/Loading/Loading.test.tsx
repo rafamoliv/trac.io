@@ -12,7 +12,7 @@ const props = {
 }
 
 describe('<Loading />', () => {
-    describe('Component Render', () => {
+    describe('Component Snapshot', () => {
         it('render element', () => {
             const { container } = render(<Loading {...props} />)
             expect(container.firstChild).toMatchSnapshot()

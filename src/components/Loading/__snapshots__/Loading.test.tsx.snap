@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`<Loading /> > Component Render > render element 1`] = `
+exports[`<Loading /> > Component Snapshot > render element 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
