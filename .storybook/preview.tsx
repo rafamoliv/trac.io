@@ -60,7 +60,7 @@ export const parameters = {
 export const globalTypes = {
   locale: {
     name: 'Locale',
-    defaultValue: 'ptbr',
+    defaultValue: 'en',
     description: 'Internationalization locale',
     toolbar: {
       title: 'Language',
