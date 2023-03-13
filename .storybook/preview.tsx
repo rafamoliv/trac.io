@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, Suspense } from 'react'
+import { useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { BrowserRouter } from 'react-router-dom'
 import { MyThemeProvider } from '../src/styles'
@@ -87,17 +87,15 @@ export const decorators = [
     }, [locale])
 
     return (
-      <Suspense fallback={<h1>Loading...</h1>}>
-        <Provider store={Store}>
-          <MyThemeProvider>
-            <I18nextProvider i18n={i18n}>
-              <BrowserRouter>
-                <Story />
-              </BrowserRouter>
-            </I18nextProvider>
-          </MyThemeProvider>
-        </Provider>
-      </Suspense>
+      <Provider store={Store}>
+        <MyThemeProvider>
+          <I18nextProvider i18n={i18n}>
+            <BrowserRouter>
+              <Story />
+            </BrowserRouter>
+          </I18nextProvider>
+        </MyThemeProvider>
+      </Provider>
     )
   }
 ]
