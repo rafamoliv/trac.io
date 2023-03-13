@@ -32,6 +32,9 @@ export default defineConfig(({ mode }) => {
       globals: true,
       environment: 'jsdom',
       setupFiles: './vitest.setup.ts',
+      deps: {
+        inline: ['vitest-canvas-mock']
+      },
       coverage: {
         provide: 'c8',
         exclude: [
