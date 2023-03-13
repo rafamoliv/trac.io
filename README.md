@@ -1,60 +1,72 @@
 <center>
-  <img src=".gitlab/assets/trac.io-gray.svg" alt="A logo vite and react" width="500" />
+  <img src=".github/assets/trac.io.small.svg" alt="trac.io logo" width="296" />
 </center>
 <br /><br />
 
-# Vite React - Boilerplate
+# trac.io
 
-Boilerplate para projetos usando Vite com react.
+A tech industry company created for study and practice purposes.
 
-## Sumário
+## Summary
 
-- [O que utilizamos](#o-que-utilizamos)
-- [Configuração](#configuração)
-  - [Requerimentos](#requerimentos)
+- [Access website](#access-website)
+- [Technologies](#technologies)
+- [Settings](#settings)
+  - [How to install and run project](#how-to-install-and-run-project)
+  - [How to run storybook](#how-to-run-storybook)
+  - [How to run tests](#how-to-run-tests)
   - [VsCode](#vscode)
-  - [Variáveis de ambiente](#variáveis-de-ambiente)
-    - [Variáveis de ambiente para desenvolvimento](#variáveis-de-ambiente-para-desenvolvimento)
-    - [Variáveis de ambiente para produção](#variáveis-de-ambiente-para-produção)
-  - [Comandos](#commands)
-  - [Internacionalização](#internacionalização)
-- [Fluxo para desenvolvimento](#fluxo-para-desenvolvimento)
-  - [Criando um componente](#criando-um-componente)
-  - [Criando uma página](#criando-uma-página)
-  - [Criando uma redux](#criando-um-redux)
-- [Fluxo para produção](#fluxo-para-produção)
+  - [Commands](#commands)
+  - [Internationalization](#internationalization)
+- [Development flow](#development-flow)
+- [Production flow](#production-flow)
 
-### O que utilizamos ?
+## Access website
 
+- [trac.io](https://tracio.netlify.app/)
+
+## Technologies
+
+- [TypeScript](https://www.typescriptlang.org/docs/)
 - [ReactJS](https://reactjs.org/)
-- [Redux](https://redux.js.org/)
+- [Vite](https://vitejs.dev/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Styled Components](https://styled-components.com/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [AntDesign](https://ant.design/components/overview/)
+- [Styled-Components](https://styled-components.com/docs)
+- [Highcharts](https://www.highcharts.com/)
+- [Lottie for React](https://lottiereact.com/)
+- [Storybook](https://storybook.js.org/docs/react/get-started/install)
+- [Vitest](https://vitest.dev/guide/)
+- [Testing Library](https://testing-library.com/docs/)
 - [I18next](https://www.i18next.com/)
 - [I18next-react](https://react.i18next.com/)
 - [Fontawesome](https://fontawesome.com/)
-- [Vitest](https://vitest.dev/)
-- [Storybook](https://storybook.js.org/)
+- [DateFNS](https://date-fns.org/)
+- [Faker](https://fakerjs.dev/guide/)
 - [Eslint](https://eslint.org/)
+- [Lint-Staged](https://github.com/okonet/lint-staged)
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
-- [Lint-Staged](https://github.com/okonet/lint-staged)
-- [Plop](https://plopjs.com/)
 
-## Configuração
+## Settings
 
-### Requerimentos
+### How to install and run project
 
-- Node v16.17.0
-- Yarn
+yarn && yarn dev
+
+### How to run storybook
+
+yarn storybook
+
+### How to run tests
+
+yarn test
 
 ### VsCode
 
-As configurações abaixo não são obrigatórias mas facilitam
-no desesenvolvimento na Ide VsCode
+The settings below are not mandatory but make it easier in development at Ide VsCode
 
-1. Crie o arquivo `settings.json` dentro do `.vscode`, com as seguintes configurações:
+1. Create the `settings.json` file inside `.vscode`, with the following settings:
 
 ```json
 {
@@ -65,136 +77,25 @@ no desesenvolvimento na Ide VsCode
 }
 ```
 
-2. Crie o arquivo `jsconfig.json` no diretório raiz, com as seguintes configurações:
+### Internationalization
 
-```json
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "exclude": ["dist"]
-}
-```
+Internationalization done using i18next, if in doubt, please read the documentation [I18next](https://www.i18next.com/)
 
-Essa configuração ajuda na execução de importações com alias de webpack. A prop `exclude` é por projeto. Se quiser entender melhor [acesse](https://code.visualstudio.com/docs/languages/jsconfig#_using-webpack-aliases)
+### Commands
 
-### Variáveis de ambiente
+- `dev`: runs the application and starts a local server at `http://localhost:{port}/`.
+- `build`: generate for production.
+- `storybook`: runs the stories from storybook.
+- `test`: runs vitest and testing library tests.
+- `preview`: generates for production and starts a local server on `http://localhost:{port}/`.
+- `lint`: runs the linter on all components and pages.
+- `format`: runs prettier to format all components and pages.
 
-Para usar variáveis de ambiente, seguimos o modelo recomendado pelo Vite.
+## Development flow
 
-**Obs: Esses arquivos são ignorados no .gitignore**
+1. Print on terminal `yarn dev` to getting started
 
-#### Variáveis de ambiente para desenvolvimento
+## Production flow
 
-Digite o seguinte comando no seu terminal para copiar o arquivo de exemplo e
-renomeá-lo para `.env.development.local`:
-
-```bash
-cp .env-example .env.development.local
-```
-
-Variáveis locais:
-
-```
-REACT_ENVIRONMENT = 'DEVELOPMENT'
-```
-
-#### Variáveis de ambiente para produção
-
-Digite o seguinte comando no seu terminal para copiar o arquivo de exemplo e
-renomeá-lo para `.env`:
-
-```bash
-cp .env-example .env
-```
-
-Valores de produção:
-
-```
-REACT_ENVIRONMENT = 'PRODUCTION'
-```
-
-### Internacionalização
-
-Acesso o [Readme](src/locales/README.md) exclusivo para essa parte para tirar as suas
-dúvidas.
-
-### Comandos
-
-- `dev:app`: roda a aplicação e inicia um servidor local em`http://localhost:5173/`.
-- `build:app`: gera para produção.
-- `preview:app`: gera para produção e inicia um servidor local em `http://localhost:4173/`.
-- `lint`: roda o linter em todos os componentes e páginas.
-- `format`: roda o prettier para formatar todos os componentes e páginas.
-- `test`: roda o vitest em modo de observação.
-- `test:coverage`: roda o vites com cobertura de código.
-- `generate`: roda o plop para gerar arquivos.
-- `storybook`: roda o storybook e inicia um servidor local em `http://localhost:6006/`.
-- `storybook:build`: gera um build para produção do storybook.
-
-## Fluxo para desenvolvimento
-
-1. Digite no terminal `yarn generate` e preencha as informações.
-2. Digite no terminal `yarn dev:app` para iniciar o projeto
-
-### Criando um componente
-
-1. Digite no terminal `npm run generate` ou `yarn run` e
-   escolha opção `Component`
-2. Escolha o tipo de componente
-3. Digite o nome respeitando o `camelCase`. Ex: `CardRestrito`
-4. Vá dentro do diretório `src/components/tipoEscolhido/NomeDoComponente` ao qual ele foi criado.
-5. Procure o arquivo `index.js` dentro desse diretório. Importe e
-   exporte o component nesse arquivo.
-6. Vá no arquivo `src/components/index.js`
-7. Importe e exporte o componente criado novamente para utilizar
-   o componente em toda a aplicação.
-
-Caso tenha alguma tradução, faça os seguintes passos:
-
-1. Vá dentro do diretório `src/components/tipoEscolhido/NomeDoComponente/locales/` ao qual ele foi criado.
-2. Procure os arquivos de linguas e siga as orientações no arquivo [Readme](src/locales/README.md) da internacionalização para ajustar o namespace.
-3. Vá no arquivo `src/components/tipoEscolhido/locales.js`.
-4. Importe e exporte a tradução.
-5. Vá no arquivo `src/components/locales.js`
-6. Importe e exporte a tradução de acordo com o tipo dele.
-
-### Criando uma página
-
-1. Digite no terminal `npm run generate` ou `yarn run` e
-   escolha opção `Page`
-2. Digite o nome respeitando o `camelCase`. Ex: `NovoTutorial`
-3. Vá dentro do diretório `src/pages/NomeDaPagina` ao qual ele foi criado.
-4. Vá no arquivo `src/mainRoute.js`
-5. Importe a página para ser utilizada.
-6. Configure a rota
-
-Caso tenha alguma tradução, faça os seguintes passos:
-
-1. Vá dentro do diretório `src/pages/NomeDaPagina/locales/` ao qual ele foi criado.
-2. Procure os arquivos de linguas e siga as orientações no arquivo [Readme](src/locales/README.md) da internacionalização para ajustar o namespace.
-3. Vá no arquivo `src/pages/locales.js`.
-4. Importe e exporte a tradução.
-
-### Criando um redux
-
-1. Digite no terminal `npm run generate` ou `yarn run` e
-   escolha opção `Redux`
-2. Digite o nome respeitando o `camelCase`. Ex: `NovoTutorial`
-3. Vá dentro do diretório `src/store/store.js`.
-4. Importe e exporte o arquivo configurando no reducers.
-
-Caso tenha alguma tradução, faça os seguintes passos:
-
-1. Vá dentro do diretório `src/store/NomeDoRedux/locales/index` ao qual ele foi criado.
-2. Procure os arquivos de linguas e siga as orientações no arquivo [Readme](src/locales/README.md) da internacionalização para ajustar o namespace.
-3. Vá no arquivo `src/store/locales/locales.js`. **ver com o rafa sobre isso**
-4. Importe e exporte a tradução.
-
-## Fluxo para produção
-
-1. Digite no terminal `yarn preview:app`
-2. Publique os arquivos
+1. Type in terminal `yarn preview`
+2. Publish the files
