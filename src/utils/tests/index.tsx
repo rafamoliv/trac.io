@@ -1,7 +1,6 @@
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup, RenderOptions } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { Provider } from 'react-redux'
 
@@ -17,7 +16,7 @@ afterEach(() => {
   cleanup()
 })
 
-const AllTheProviders = ({ children }) => {
+const AllTheProviders = ({ children }: { children: ReactNode }) => {
   return (
     <Provider store={Store}>
       <MyThemeProvider>
@@ -27,15 +26,11 @@ const AllTheProviders = ({ children }) => {
   )
 }
 
-const customRender = (ui, options) => {
+const customRender = (ui: ReactElement, options?: Omit<RenderOptions, 'queries'>) => {
   return render(ui, {
     wrapper: AllTheProviders,
     ...options
   })
-}
-
-AllTheProviders.propTypes = {
-  children: PropTypes.node.isRequired
 }
 
 // re-export everything
