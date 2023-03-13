@@ -1,7 +1,6 @@
 <center>
   <img src=".github/assets/trac.io-gray.svg" alt="trac.io logo" width="296" />
 </center>
-<br /><br />
 
 # trac.io
 
