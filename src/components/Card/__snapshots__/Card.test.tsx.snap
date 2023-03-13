@@ -1,0 +1,13 @@
+// Vitest Snapshot v1
+
+exports[`<Card /> > Component Render > render element 1`] = `
+<div
+  class="ant-card ant-card-bordered css-dev-only-do-not-override-1me4733"
+>
+  <div
+    class="ant-card-body"
+  >
+    Welcome to React and react-i18next
+  </div>
+</div>
+`;
